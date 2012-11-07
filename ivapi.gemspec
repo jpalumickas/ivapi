@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Ivapi::VERSION
   gem.authors       = ["Justas Palumickas"]
   gem.email         = ["justas@elish.lt"]
-  gem.description   = %q{ Gem which help to communicate with iv.lt API }
-  gem.summary       = %q{ Gem which help to communicate with iv.lt API }
+  gem.description   = %q{ Gem which helps to communicate with iv.lt API }
+  gem.summary       = %q{ Gem which helps to communicate with iv.lt API }
   gem.homepage      = "https://github.com/jpalumickas/ivapi/"
 
   gem.files         = `git ls-files`.split($/)
