@@ -19,7 +19,7 @@ module Ivapi
       options = { :command => 'server_tasks' , :id => self.server_id, :count => 10 }.merge!(o)
       self.class.get(self.file, :query => options.merge!(@auth))
     end
-    
+
     def graphs(o={})
       options = { :command => 'server_graphs' , :id => self.server_id }.merge!(o)
       self.class.get(self.file, :query => options.merge!(@auth))
@@ -29,31 +29,31 @@ module Ivapi
       options = { :command => 'server_os' , :id => self.server_id }
       self.class.get(self.file, :query => options.merge!(@auth))
     end
-    
+
     def reboot
       options = { :command => 'server_reboot' , :id => self.server_id }
       self.class.get(self.file, :query => options.merge!(@auth))
     end
-    
+
     def recreate(o={})
       options = { :command => 'server_recreate' , :id => self.server_id }.merge!(o)
       self.class.get(self.file, :query => options.merge!(@auth))
     end
-    
+
     def reset_password
       options = { :command => 'server_reset_password' , :id => self.server_id }
       self.class.get(self.file, :query => options.merge!(@auth))
     end
-    
+
     def change(o={})
       options = { :command => 'server_change' , :id => self.server_id }.merge!(o)
       self.class.get(self.file, :query => options.merge!(@auth))
-    end    
+    end
 
     def domain(o={})
       options = { :command => 'server_domain' , :id => self.server_id }.merge!(o)
       self.class.get(self.file, :query => options.merge!(@auth))
-    end    
+    end
 
   end
 end

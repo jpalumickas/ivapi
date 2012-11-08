@@ -12,18 +12,18 @@ module Ivapi
       options = { :command => 'account_orders' }
       self.class.get(self.file, :query => options.merge!(@auth))
     end
-    
+
     def services
       options = { :command => 'account_services' }
       self.class.get(self.file, :query => options.merge!(@auth))
     end
-    
-	def credits(o = { :count => 10 })
+
+    def credits(o = { :count => 10 })
       options = { :command => 'account_credits' }.merge!(o)
       self.class.get(self.file, :query => options.merge!(@auth))
     end
-    
-	def bonuses(o = { :count => 10 })
+
+    def bonuses(o = { :count => 10 })
       options = { :command => 'account_bonuses' }.merge!(o)
       self.class.get(self.file, :query => options.merge!(@auth))
     end
