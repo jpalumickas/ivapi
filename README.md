@@ -1,6 +1,6 @@
 # Ivapi
 
-TODO: Write a gem description
+Gem which helps to communicate with iv.lt API
 
 ## Installation
 

@@ -2,8 +2,6 @@ require "ivapi/version"
 require "httparty"
 
 module Ivapi
-  autoload :Base, 	'ivapi/base'
-  # autoload :Base, 	'ivapi/base'
-  #autoload :Server, 	'ivapi/server'
-
+  autoload :Account, 	'ivapi/account'
+  autoload :Server, 	'ivapi/server'
 end

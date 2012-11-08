@@ -19,7 +19,5 @@ module Ivapi
       self.class.get(self.file, :query => options.merge!(@auth))['version']
     end
 
-    include Account
-
   end
 end
