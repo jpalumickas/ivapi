@@ -18,13 +18,20 @@ Or install it yourself as:
 
 ## Usage
 
+Config file in **config/ivapi.yml**
+```ruby
+username: YOUR USERNAME
+password: YOUR PASSWORD
+```
+
+
 ```ruby
 require 'ivapi'
 
 API_NAME = "your_account_name" #You must to set it on https://klientams.iv.lt/users.php with description "API".
 API_PASSWORD = "your_account_password"
 
-account = Ivapi::Account.new(API_NAME, API_PASSWORD)
+account = Ivapi::Account.new
 
 puts "Account name: #{account.info['ac_name']}"
 puts "Account created: #{account.info['ac_created']}"
@@ -33,7 +40,7 @@ account.services.each do |order|
   puts "Id: #{order['se_id']} Description: #{order['se_description']}"
 end
 
-server = Ivapi::Server.new(API_NAME, API_PASSWORD).id(123) # Where is id, there is your service id.
+server = Ivapi::Server.new.id(123) # Where is id, there is your service id.
 server.tasks.each do |task| # can be: server.tasks(:count => 15) (Max: 1000)
 	puts "Id: #{task['ta_id']} Command: #{task['ta_command']}"
 end
