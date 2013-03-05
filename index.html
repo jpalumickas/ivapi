@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Ivapi by jpalumickas</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Ivapi</h1>
+        <h2>Gem which helps to communicate with iv.lt API</h2>
+        <a href="https://github.com/jpalumickas/ivapi" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>Ivapi</h1>
+
+<p>Gem which helps to communicate with iv.lt API</p>
+
+<h2>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<pre><code>gem 'ivapi'
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install ivapi
+</code></pre>
+
+<h2>Usage</h2>
+
+<p>Config file in <strong>config/ivapi.yml</strong></p>
+
+<div class="highlight"><pre><span class="n">username</span><span class="p">:</span> <span class="no">YOUR</span> <span class="no">USERNAME</span>
+<span class="n">password</span><span class="p">:</span> <span class="no">YOUR</span> <span class="no">PASSWORD</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'ivapi'</span>
+
+<span class="no">API_NAME</span> <span class="o">=</span> <span class="s2">"your_account_name"</span> <span class="c1">#You must to set it on https://klientams.iv.lt/users.php with description "API".</span>
+<span class="no">API_PASSWORD</span> <span class="o">=</span> <span class="s2">"your_account_password"</span>
+
+<span class="n">account</span> <span class="o">=</span> <span class="no">Ivapi</span><span class="o">::</span><span class="no">Account</span><span class="o">.</span><span class="n">new</span>
+
+<span class="nb">puts</span> <span class="s2">"Account name: </span><span class="si">#{</span><span class="n">account</span><span class="o">.</span><span class="n">info</span><span class="o">[</span><span class="s1">'ac_name'</span><span class="o">]</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">puts</span> <span class="s2">"Account created: </span><span class="si">#{</span><span class="n">account</span><span class="o">.</span><span class="n">info</span><span class="o">[</span><span class="s1">'ac_created'</span><span class="o">]</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="n">account</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">order</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="s2">"Id: </span><span class="si">#{</span><span class="n">order</span><span class="o">[</span><span class="s1">'se_id'</span><span class="o">]</span><span class="si">}</span><span class="s2"> Description: </span><span class="si">#{</span><span class="n">order</span><span class="o">[</span><span class="s1">'se_description'</span><span class="o">]</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+
+<span class="n">server</span> <span class="o">=</span> <span class="no">Ivapi</span><span class="o">::</span><span class="no">Server</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">id</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span> <span class="c1"># Where is id, there is your service id.</span>
+<span class="n">server</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">task</span><span class="o">|</span> <span class="c1"># can be: server.tasks(:count =&gt; 15) (Max: 1000)</span>
+    <span class="nb">puts</span> <span class="s2">"Id: </span><span class="si">#{</span><span class="n">task</span><span class="o">[</span><span class="s1">'ta_id'</span><span class="o">]</span><span class="si">}</span><span class="s2"> Command: </span><span class="si">#{</span><span class="n">task</span><span class="o">[</span><span class="s1">'ta_command'</span><span class="o">]</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+</pre></div>
+
+<h2>Contributing</h2>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/jpalumickas/ivapi/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/jpalumickas/ivapi/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/jpalumickas/ivapi"></a> is maintained by <a href="https://github.com/jpalumickas">jpalumickas</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
