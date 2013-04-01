@@ -1,6 +1,6 @@
 # Ivapi
 
-Gem which helps to communicate with iv.lt API
+Gem which helps to communicate with [iv.lt][] API
 
 ## Installation
 
@@ -18,7 +18,9 @@ Or install it yourself as:
 
 ## Usage
 
-Config file in **config/ivapi.yml**
+Create new account at https://klientams.iv.lt/users.php with description "API".
+
+Create config file **config/ivapi.yml** and fill in with username and password.
 ```ruby
 username: YOUR USERNAME
 password: YOUR PASSWORD
@@ -28,7 +30,7 @@ password: YOUR PASSWORD
 ```ruby
 require 'ivapi'
 
-API_NAME = "your_account_name" #You must to set it on https://klientams.iv.lt/users.php with description "API".
+API_NAME = "your_account_name"
 API_PASSWORD = "your_account_password"
 
 account = Ivapi::Account.new
@@ -53,3 +55,5 @@ end
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+[iv.lt]: http://www.iv.lt
