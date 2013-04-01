@@ -1,4 +1,10 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in ivapi.gemspec
+group :test do
+  gem 'json', '~> 1.7', :platforms => [:ruby_18, :jruby]
+  gem 'rspec', '>= 2.13'
+  gem 'simplecov', :require => false
+  gem 'webmock'
+end
+
 gemspec
