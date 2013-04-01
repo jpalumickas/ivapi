@@ -17,6 +17,8 @@ Gem::Specification.new do |gem|
   gem.test_files = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
+  gem.add_dependency 'faraday', '~> 0.8'
+  gem.add_dependency 'faraday_middleware', '~> 0.9'
   gem.add_dependency 'httparty', '~> 0.9.0'
 
   gem.version = Ivapi::VERSION
