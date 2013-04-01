@@ -1,0 +1,42 @@
+{
+  "ac_id":"1",
+  "ac_created":"2012-12-12 12:12:12",
+  "ac_company":null,
+  "ac_name":"Name Surname",
+  "ac_occupation":null,
+  "ac_code":"",
+  "ac_vat":null,
+  "ac_address":"Address",
+  "ac_city":"",
+  "ac_state":null,
+  "ac_zip":null,
+  "ac_country":"",
+  "ac_phone":"",
+  "ac_mobile":null,
+  "ac_fax":null,
+  "ac_email":"name@test.com",
+  "ac_bank_account":null,
+  "ac_bank":null,
+  "ac_bank_code":null,
+  "ac_credit":"0",
+  "ac_bonus":"0",
+  "ac_contacts":[],
+  "ac_users":[
+    {
+      "us_id":"1",
+      "us_created":"2009-10-07 21:50:17",
+      "us_inactive":"no",
+      "us_subuser":"no",
+      "us_nick":"foobar",
+      "us_description":null
+    },
+    {
+      "us_id":"2",
+      "us_created":"2012-11-06 21:06:53",
+      "us_inactive":"no",
+      "us_subuser":"yes",
+      "us_nick":"foobarapi",
+      "us_description":"API"
+    }
+  ]
+}
