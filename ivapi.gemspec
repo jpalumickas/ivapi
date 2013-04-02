@@ -17,11 +17,12 @@ Gem::Specification.new do |gem|
   gem.test_files = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
+  gem.add_development_dependency 'bundler', '~> 1.0'
+  gem.add_dependency 'addressable', '~> 2.2'
   gem.add_dependency 'faraday', '~> 0.8'
   gem.add_dependency 'faraday_middleware', '~> 0.9'
   gem.add_dependency 'hashie', '~> 2.0'
   gem.add_dependency 'multi_json', '~> 1.3'
-  gem.add_dependency 'httparty', '~> 0.9.0'
 
   gem.version = Ivapi::VERSION
 end
