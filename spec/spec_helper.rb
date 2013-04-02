@@ -15,6 +15,18 @@ RSpec.configure do |config|
   end
 end
 
+def stub_get(url)
+  stub_request(:get, iv_url(url))
+end
+
+def stub_command(command)
+
+  params = { command: command }
+  params.merge!(@client.authentication)
+
+  stub_request(:get, "https://api.iv.lt/json.php").with(query: params)
+end
+
 def fixture_path
   File.expand_path("../fixtures", __FILE__)
 end
@@ -30,4 +42,20 @@ def json_response(file)
       :content_type => 'application/json; charset=utf-8'
     }
   }
+end
+
+def iv_url(url)
+  if url =~ /^http/
+    url
+  else
+    "https://api.iv.lt#{url}"
+  end
+end
+
+def iv_command_url(command)
+  if @client && @client.authenticated?
+    "https://api.iv.lt?nick=#{@client.username}&password=#{@client.password}&command=#{command}"
+  else
+    "https://api.iv.lt?command=#{command}"
+  end
 end
