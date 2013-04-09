@@ -11,4 +11,11 @@ describe Ivapi::Client::Account do
     account_info = @client.account_info
     expect(account_info.ac_name).to eq("Name Surname")
   end
+
+  it "returns account orders" do
+    stub_command("account_orders").to_return(json_response("account_orders.json"))
+    account_orders = @client.account_orders
+    expect(account_orders.count).to eq(3)
+    expect(account_orders.first.or_cost).to eq("11.11")
+  end
 end
