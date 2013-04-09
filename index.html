@@ -1,36 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <title>Ivapi by jpalumickas</title>
 
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-    <title>Ivapi by jpalumickas</title>
   </head>
-
   <body>
-    <header>
-      <div class="inner">
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Ivapi</h1>
+        <p class="header">Gem which helps to communicate with iv.lt API</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/jpalumickas/ivapi/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/jpalumickas/ivapi/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/jpalumickas/ivapi">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/jpalumickas">jpalumickas</a></p>
+
+
+      </header>
+      <section>
         <h1>Ivapi</h1>
-        <h2>Gem which helps to communicate with iv.lt API</h2>
-        <a href="https://github.com/jpalumickas/ivapi" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>Ivapi</h1>
-
-<p>Gem which helps to communicate with iv.lt API</p>
+<p>Gem which helps to communicate with <a href="http://www.iv.lt">iv.lt</a> API</p>
 
 <h2>Installation</h2>
 
@@ -51,60 +53,36 @@
 
 <h2>Usage</h2>
 
-<p>Config file in <strong>config/ivapi.yml</strong></p>
-
-<div class="highlight"><pre><span class="n">username</span><span class="p">:</span> <span class="no">YOUR</span> <span class="no">USERNAME</span>
-<span class="n">password</span><span class="p">:</span> <span class="no">YOUR</span> <span class="no">PASSWORD</span>
-</pre></div>
+<p>Create new account at <a href="https://klientams.iv.lt/users.php">https://klientams.iv.lt/users.php</a> with description "API".</p>
 
 <div class="highlight"><pre><span class="nb">require</span> <span class="s1">'ivapi'</span>
 
-<span class="no">API_NAME</span> <span class="o">=</span> <span class="s2">"your_account_name"</span> <span class="c1">#You must to set it on https://klientams.iv.lt/users.php with description "API".</span>
-<span class="no">API_PASSWORD</span> <span class="o">=</span> <span class="s2">"your_account_password"</span>
+<span class="n">client</span> <span class="o">=</span> <span class="ss">Ivapi</span><span class="p">:</span><span class="ss">:Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">username</span><span class="p">:</span> <span class="s1">'foo'</span><span class="p">,</span> <span class="ss">password</span><span class="p">:</span> <span class="s1">'bar'</span><span class="p">)</span>
+<span class="n">account_info</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">account_info</span>
 
-<span class="n">account</span> <span class="o">=</span> <span class="no">Ivapi</span><span class="o">::</span><span class="no">Account</span><span class="o">.</span><span class="n">new</span>
-
-<span class="nb">puts</span> <span class="s2">"Account name: </span><span class="si">#{</span><span class="n">account</span><span class="o">.</span><span class="n">info</span><span class="o">[</span><span class="s1">'ac_name'</span><span class="o">]</span><span class="si">}</span><span class="s2">"</span>
-<span class="nb">puts</span> <span class="s2">"Account created: </span><span class="si">#{</span><span class="n">account</span><span class="o">.</span><span class="n">info</span><span class="o">[</span><span class="s1">'ac_created'</span><span class="o">]</span><span class="si">}</span><span class="s2">"</span>
-
-<span class="n">account</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">order</span><span class="o">|</span>
-  <span class="nb">puts</span> <span class="s2">"Id: </span><span class="si">#{</span><span class="n">order</span><span class="o">[</span><span class="s1">'se_id'</span><span class="o">]</span><span class="si">}</span><span class="s2"> Description: </span><span class="si">#{</span><span class="n">order</span><span class="o">[</span><span class="s1">'se_description'</span><span class="o">]</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-
-<span class="n">server</span> <span class="o">=</span> <span class="no">Ivapi</span><span class="o">::</span><span class="no">Server</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">id</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span> <span class="c1"># Where is id, there is your service id.</span>
-<span class="n">server</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">task</span><span class="o">|</span> <span class="c1"># can be: server.tasks(:count =&gt; 15) (Max: 1000)</span>
-    <span class="nb">puts</span> <span class="s2">"Id: </span><span class="si">#{</span><span class="n">task</span><span class="o">[</span><span class="s1">'ta_id'</span><span class="o">]</span><span class="si">}</span><span class="s2"> Command: </span><span class="si">#{</span><span class="n">task</span><span class="o">[</span><span class="s1">'ta_command'</span><span class="o">]</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
+<span class="nb">puts</span> <span class="s2">"Account name: </span><span class="si">#{</span><span class="n">account_info</span><span class="o">.</span><span class="n">ac_name</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">puts</span> <span class="s2">"Account created: </span><span class="si">#{</span><span class="n">account_info</span><span class="o">.</span><span class="n">ac_created</span><span class="si">}</span><span class="s2">"</span>
 </pre></div>
 
-<h2>Contributing</h2>
+<h2>Supported Ruby Versions</h2>
 
-<ol>
-<li>Fork it</li>
-<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
-<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
-<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
-<li>Create new Pull Request</li>
-</ol>
-        </section>
+<p>This library aims to support and is <a href="http://travis-ci.org/jpalumickas/ivapi">tested against</a> the following Ruby
+implementations:</p>
 
-        <aside id="sidebar">
-          <a href="https://github.com/jpalumickas/ivapi/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/jpalumickas/ivapi/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+<ul>
+<li>Ruby 1.9.2</li>
+<li>Ruby 1.9.3</li>
+<li>Ruby 2.0.0</li>
+</ul><h2>Copyright</h2>
 
-          <p class="repo-owner"><a href="https://github.com/jpalumickas/ivapi"></a> is maintained by <a href="https://github.com/jpalumickas">jpalumickas</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+<p>Copyright (c) 2012-2013 Justas Palumickas.
+See <a href="LICENSE.md">LICENSE</a> for details.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
-
-  
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
   </body>
 </html>
