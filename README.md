@@ -2,6 +2,9 @@
 
 Gem which helps to communicate with [iv.lt][] API
 
+[![Build Status](https://secure.travis-ci.org/jpalumickas/ivapi.png?branch=master)][travis]
+[![Dependency Status](https://gemnasium.com/jpalumickas/ivapi.png?travis)][gemnasium]
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -20,40 +23,32 @@ Or install it yourself as:
 
 Create new account at https://klientams.iv.lt/users.php with description "API".
 
-Create config file **config/ivapi.yml** and fill in with username and password.
-```ruby
-username: YOUR USERNAME
-password: YOUR PASSWORD
-```
-
-
 ```ruby
 require 'ivapi'
 
-API_NAME = "your_account_name"
-API_PASSWORD = "your_account_password"
+client = Ivapi::Client.new(username: 'foo', password: 'bar')
+account_info = client.account_info
 
-account = Ivapi::Account.new
-
-puts "Account name: #{account.info['ac_name']}"
-puts "Account created: #{account.info['ac_created']}"
-
-account.services.each do |order|
-  puts "Id: #{order['se_id']} Description: #{order['se_description']}"
-end
-
-server = Ivapi::Server.new.id(123) # Where is id, there is your service id.
-server.tasks.each do |task| # can be: server.tasks(:count => 15) (Max: 1000)
-	puts "Id: #{task['ta_id']} Command: #{task['ta_command']}"
-end
+puts "Account name: #{account_info.ac_name}"
+puts "Account created: #{account_info.ac_created}"
 ```
 
-## Contributing
+## Supported Ruby Versions
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+This library aims to support and is [tested against][travis] the following Ruby
+implementations:
+
+* Ruby 1.9.2
+* Ruby 1.9.3
+* Ruby 2.0.0
+
+## Copyright
+Copyright (c) 2012-2013 Justas Palumickas.
+See [LICENSE][] for details.
+
+[rubygems]: https://rubygems.org/gems/ivapi
+[travis]: http://travis-ci.org/jpalumickas/ivapi
+[gemnasium]: https://gemnasium.com/jpalumickas/ivapi
 
 [iv.lt]: http://www.iv.lt
+[license]: LICENSE.md
