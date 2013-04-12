@@ -1,0 +1,35 @@
+[
+  {
+    "se_id": "1",
+    "se_created": "2012-12-12 12:12:12",
+    "se_since": "2012-12-12",
+    "se_until": "2013-12-12",
+    "se_quantity": "1",
+    "se_price": "29.00",
+    "se_discount": "0",
+    "se_unit": "m.",
+    "se_description": "Adreso metinis mokestis (example.com)"
+  },
+  {
+    "se_id": "2",
+    "se_created": "2013-01-01 12:12:12",
+    "se_since": "2013-01-01",
+    "se_until": "2014-01-01",
+    "se_quantity": "1",
+    "se_price": "29.00",
+    "se_discount": "0",
+    "se_unit": "m.",
+    "se_description": "Adreso metinis mokestis (example2.com)"
+  },
+  {
+    "se_id": "3",
+    "se_created": "2013-02-02 12:12:12",
+    "se_since": "2013-02-02",
+    "se_until": "2013-03-02",
+    "se_quantity": "1",
+    "se_price": "10.00",
+    "se_discount": "10",
+    "se_unit": "mėn.",
+    "se_description": "Serverio nuoma (planas 1GHz:1048MB:10GB:10Mbps, server.example.com)"
+  }
+]

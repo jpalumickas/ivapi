@@ -1,0 +1,20 @@
+[
+  {
+    "bo_id": "1",
+    "bo_created": "2013-03-01 12:12:12",
+    "bo_amount": "1.00",
+    "bo_description": "SMS +370.61234567 (example)"
+  },
+  {
+    "bo_id": "2",
+    "bo_created": "2013-03-02 12:12:12",
+    "bo_amount": "2.00",
+    "bo_description": "SMS +370.61234568 (example)"
+  },
+  {
+    "bo_id": "3",
+    "bo_created": "2013-03-03 12:12:12",
+    "bo_amount": "3.00",
+    "bo_description": "SMS +370.61234569 (example)"
+  }
+]
