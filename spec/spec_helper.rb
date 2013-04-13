@@ -19,9 +19,10 @@ def stub_get(url)
   stub_request(:get, iv_url(url))
 end
 
-def stub_command(command)
+def stub_command(command, options={})
 
   params = { command: command }
+  params.merge!(options)
   params.merge!(@client.authentication)
 
   stub_request(:get, "https://api.iv.lt/json.php").with(query: params)

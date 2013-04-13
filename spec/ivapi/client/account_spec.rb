@@ -27,9 +27,8 @@ describe Ivapi::Client::Account do
   end
 
   it "returns account bonuses" do
-    stub_command("account_bonuses&count=10").to_return(json_response("account_bonuses.json"))
+    stub_command("account_bonuses", {count: 10}).to_return(json_response("account_bonuses.json"))
     account_bonuses = @client.account_bonuses
-    expect(account_bonuses.count).to eq(3)
-    expect(account_bonuses.last.bo_description).to eq("SMS +370.61234569 (example)")
+    expect(account_bonuses[2].bo_description).to eq("SMS +370.61234569 (example)")
   end
 end
