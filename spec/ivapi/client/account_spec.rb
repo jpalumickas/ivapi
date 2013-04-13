@@ -18,4 +18,18 @@ describe Ivapi::Client::Account do
     expect(account_orders.count).to eq(3)
     expect(account_orders.first.or_cost).to eq("11.11")
   end
+
+  it "returns account services" do
+    stub_command("account_services").to_return(json_response("account_services.json"))
+    account_services = @client.account_services
+    expect(account_services.count).to eq(3)
+    expect(account_services.first.se_description).to eq("Adreso metinis mokestis (example.com)")
+  end
+
+  it "returns account bonuses" do
+    stub_command("account_bonuses&count=10").to_return(json_response("account_bonuses.json"))
+    account_bonuses = @client.account_bonuses
+    expect(account_bonuses.count).to eq(3)
+    expect(account_bonuses.last.bo_description).to eq("SMS +370.61234569 (example)")
+  end
 end
