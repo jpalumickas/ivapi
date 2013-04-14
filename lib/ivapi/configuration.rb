@@ -8,7 +8,8 @@ module Ivapi
       :faraday_config_block,
       :username,
       :password,
-      :user_agent
+      :user_agent,
+      :server_id
     ].freeze
 
     DEFAULT_ADAPTER = Faraday.default_adapter
