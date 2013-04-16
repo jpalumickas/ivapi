@@ -2,8 +2,10 @@
 
 Gem which helps to communicate with [iv.lt][] API
 
+[![Gem Version](https://badge.fury.io/rb/ivapi.png)][rubygems]
 [![Build Status](https://secure.travis-ci.org/jpalumickas/ivapi.png?branch=master)][travis]
 [![Dependency Status](https://gemnasium.com/jpalumickas/ivapi.png?travis)][gemnasium]
+[![Coverage Status](https://coveralls.io/repos/jpalumickas/ivapi/badge.png?branch=master)][coveralls]
 
 ## Installation
 
@@ -49,6 +51,7 @@ See [LICENSE][] for details.
 [rubygems]: https://rubygems.org/gems/ivapi
 [travis]: http://travis-ci.org/jpalumickas/ivapi
 [gemnasium]: https://gemnasium.com/jpalumickas/ivapi
+[coveralls]: https://coveralls.io/r/jpalumickas/ivapi
 
 [iv.lt]: http://www.iv.lt
 [license]: LICENSE.md
