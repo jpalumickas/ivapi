@@ -8,6 +8,7 @@ group :test do
   gem 'simplecov', require: false
   gem 'webmock'
   gem 'coveralls', require: false
+  gem 'guard-rspec'
 end
 
 gemspec
