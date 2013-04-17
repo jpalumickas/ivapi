@@ -1,0 +1,132 @@
+{
+  "centos-5-x86": {
+    "title": "CentOS 5",
+    "arch": "32-bit",
+    "url": "http://www.centos.org/"
+  },
+  "centos-5-x86_64": {
+    "title": "CentOS 5",
+    "url": "http://www.centos.org/",
+    "arch": "64-bit"
+  },
+  "centos-6-x86": {
+    "title": "CentOS 6",
+    "arch": "32-bit",
+    "url": "http://www.centos.org/"
+  },
+  "centos-6-x86_64": {
+    "url": "http://www.centos.org/",
+    "arch": "64-bit",
+    "title": "CentOS 6"
+  },
+  "centos-6-x86_64-webmin": {
+    "min_ram": "2048",
+    "panel": "yes",
+    "title": "Webmin 1.5 (CentOS 6, PHP 5.3)",
+    "url": "http://forumas.dedikuoti.lt/showthread.php?p=139",
+    "arch": "64-bit"
+  },
+  "debian-6.0-x86_64-ispconfig": {
+    "min_ram": "2048",
+    "url": "http://forumas.dedikuoti.lt/showthread.php?p=158",
+    "title": "ISPConfig 3 (Debian 6, PHP 5.3)",
+    "panel": "yes",
+    "arch": "64-bit"
+  },
+  "centos-6-x86_64-directadmin": {
+    "arch": "64-bit",
+    "verify": "http://tools.iv.lt/da/licence.php?ip=%s",
+    "url": "http://forumas.dedikuoti.lt/showthread.php?p=520",
+    "price": "99",
+    "min_ram": "2048",
+    "title": "DirectAdmin 1.4",
+    "panel": "yes"
+  },
+  "centos-6-x86_64-cs-1.6": {
+    "title": "Counter-Strike 1.6",
+    "arch": "64-bit",
+    "panel": "yes",
+    "url": "http://forumas.dedikuoti.lt/showthread.php?p=580",
+    "min_ram": "2048"
+  },
+  "debian-5.0-x86": {
+    "title": "Debian 5",
+    "arch": "32-bit",
+    "url": "http://www.debian.org/"
+  },
+  "debian-5.0-x86_64": {
+    "title": "Debian 5",
+    "arch": "64-bit",
+    "url": "http://www.debian.org/"
+  },
+  "debian-6.0-x86": {
+    "arch": "32-bit",
+    "title": "Debian 6",
+    "url": "http://www.debian.org/"
+  },
+  "debian-6.0-x86_64": {
+    "title": "Debian 6",
+    "url": "http://www.debian.org/",
+    "arch": "64-bit"
+  },
+  "fedora-15-x86": {
+    "arch": "32-bit",
+    "title": "Fedora 15",
+    "url": "http://fedoraproject.org/"
+  },
+  "fedora-15-x86_64": {
+    "arch": "64-bit",
+    "url": "http://fedoraproject.org/",
+    "title": "Fedora 15"
+  },
+  "suse-11.3-x86": {
+    "url": "http://www.opensuse.org/",
+    "arch": "32-bit",
+    "title": "openSUSE 11.3"
+  },
+  "suse-11.3-x86_64": {
+    "title": "openSUSE 11.3",
+    "arch": "64-bit",
+    "url": "http://www.opensuse.org/"
+  },
+  "suse-11.4-x86": {
+    "url": "http://www.opensuse.org/",
+    "arch": "32-bit",
+    "title": "openSUSE 11.4"
+  },
+  "suse-11.4-x86_64": {
+    "arch": "64-bit",
+    "title": "openSUSE 11.4",
+    "url": "http://www.opensuse.org/"
+  },
+  "ubuntu-10.04-x86": {
+    "title": "Ubuntu 10.04",
+    "arch": "32-bit",
+    "url": "http://www.ubuntu.com/"
+  },
+  "ubuntu-10.04-x86_64": {
+    "url": "http://www.ubuntu.com/",
+    "title": "Ubuntu 10.04",
+    "arch": "64-bit"
+  },
+  "ubuntu-11.10-x86": {
+    "title": "Ubuntu 11.10",
+    "url": "http://www.ubuntu.com/",
+    "arch": "32-bit"
+  },
+  "ubuntu-11.10-x86_64": {
+    "title": "Ubuntu 11.10",
+    "url": "http://www.ubuntu.com/",
+    "arch": "64-bit"
+  },
+  "ubuntu-12.04-x86": {
+    "arch": "32-bit",
+    "title": "Ubuntu 12.04",
+    "url": "http://www.ubuntu.com/"
+  },
+  "ubuntu-12.04-x86_64": {
+    "url": "http://www.ubuntu.com/",
+    "title": "Ubuntu 12.04",
+    "arch": "64-bit"
+  }
+}

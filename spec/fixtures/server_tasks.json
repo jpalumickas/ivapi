@@ -1,0 +1,14 @@
+[
+  {
+    "ta_id": "1",
+    "ta_activated": "2013-04-04 04:04:04",
+    "ta_assigned": "2013-04-04 04:04:08",
+    "ta_completed": "2013-04-04 04:04:12",
+    "ta_command": "server_recreate",
+    "ta_params": {
+      "domain": "server.example.com",
+      "os": "debian-6.0-x86_64"
+    },
+    "ta_results": "Stopping container ...\nContainer was stopped\nContainer is unmounted\nDestroying container private area: /vz/private/11\nContainer private area was destroyed\nCreating container private area (debian-6.0-x86_64)\nPerforming postcreate actions\nCT configuration saved to /etc/vz/conf/1.conf\nContainer private area was created\nStarting container...\nContainer is mounted\nContainer start in progress...\nKilling container ...\nContainer was stopped\nContainer is unmounted\nCT configuration saved to /etc/vz/conf/1.conf\nCT configuration saved to /etc/vz/conf/1.conf\nStarting container...\nContainer is mounted\nAdding IP address(es): 12.23.34.45\nSetting CPU limit: 0\nSetting CPU units: 200\nSetting CPUs: 1\nContainer start in progress...\n\nID:        1\nHost:      server.example.com\nBandwidth: 10240 Kbps\nQuota:     10 GB\nCPU:       1 unit(s)\nRAM:       1024 MB\nIP:        12.23.34.45\nPassword:  secret"
+  }
+]
