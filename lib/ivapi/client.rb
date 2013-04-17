@@ -3,6 +3,7 @@ require 'ivapi/connection'
 require 'ivapi/request'
 
 require 'ivapi/client/account'
+require 'ivapi/client/server'
 
 module Ivapi
   class Client
@@ -20,6 +21,7 @@ module Ivapi
     include Ivapi::Request
 
     include Ivapi::Client::Account
+    include Ivapi::Client::Server
 
   end
 end

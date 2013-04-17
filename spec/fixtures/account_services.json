@@ -30,6 +30,6 @@
     "se_price": "10.00",
     "se_discount": "10",
     "se_unit": "mėn.",
-    "se_description": "Serverio nuoma (planas 1GHz:1048MB:10GB:10Mbps, server.example.com)"
+    "se_description": "Serverio nuoma (planas 1GHz:1024MB:10GB:10Mbps, server.example.com)"
   }
 ]

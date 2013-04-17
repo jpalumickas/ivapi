@@ -1,0 +1,30 @@
+{
+  "se_id": "3",
+  "se_created": "2013-02-02 12:12:12",
+  "se_since": "2013-02-02",
+  "se_until": "2013-03-02",
+  "se_quantity": "1",
+  "se_price": "10.00",
+  "se_discount": "0",
+  "se_unit": "mėn.",
+  "se_description": "Serverio nuoma (planas 1GHz:1024MB:10GB:10Mbps, server.example.com)",
+  "se_plan": "1GHz:1048MB:10GB:10Mbps",
+  "se_domain": "server.example.com",
+  "se_cpu": "1",
+  "se_ram": "1024",
+  "se_quota": "10",
+  "se_bandwidth": "10",
+  "se_info": {
+    "in_node": "Robinija",
+    "in_host": "server.example.com",
+    "in_bw_in": "37590",
+    "in_bw_out": "90048",
+    "in_qt_limit": "100352",
+    "in_qt_usage": "17432",
+    "in_inodes_limit": "1960000",
+    "in_inodes_usage": "116232",
+    "in_mm_limit": "2048",
+    "in_mm_usage": "1297",
+    "in_ips": "12.23.34.45"
+  }
+}
