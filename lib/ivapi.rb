@@ -5,7 +5,11 @@ require 'ivapi/client'
 module Ivapi
   extend Configuration
 
-  def new(options={})
-      Ivapi::Client.new(options)
+  class << self
+
+    def new(options={})
+        Ivapi::Client.new(options)
+    end
+
   end
 end
