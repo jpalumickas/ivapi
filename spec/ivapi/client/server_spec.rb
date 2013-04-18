@@ -13,6 +13,18 @@ describe Ivapi::Client::Server do
     expect(server_info.se_info.in_node).to eq("Robinija")
   end
 
+  it "should return server tasks" do
+    stub_command("server_tasks", {id: 3, count: 1}).to_return(json_response("server_tasks.json"))
+    server_tasks = @client.server_tasks(1)
+    expect(server_tasks.first.ta_params.domain).to eq("server.example.com")
+  end
+
+  it "should return server tasks with specified options" do
+    stub_command("server_tasks", {id: 3, count: 1, task_id: 1}).to_return(json_response("server_tasks.json"))
+    server_tasks = @client.server_tasks(1, {task_id: 1})
+    expect(server_tasks.first.ta_params.domain).to eq("server.example.com")
+  end
+
   it "should return server graphs" do
     stub_command("server_graphs", {id: 3, width: 1000, ip: "12.23.34.45"}).to_return(json_response("server_graphs.json"))
     server_graphs = @client.server_graphs(1000, "12.23.34.45")
@@ -41,6 +53,12 @@ describe Ivapi::Client::Server do
     stub_command("server_reset_password", {id: 3}).to_return(json_response("server_reset_password.json"))
     server_reset_password = @client.server_reset_password
     expect(server_reset_password.task_id).to eq("13")
+  end
+
+  it "should flush server iptables" do
+    stub_command("server_flush_iptables", {id: 3}).to_return(json_response("server_flush_iptables.json"))
+    server_flush_iptables = @client.server_flush_iptables
+    expect(server_flush_iptables.task_id).to eq("16")
   end
 
   it "should change server plan" do
