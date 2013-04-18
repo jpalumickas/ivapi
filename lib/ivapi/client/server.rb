@@ -12,7 +12,7 @@ module Ivapi
       end
 
       def server_graphs(width, ip)
-        params = options.merge({ command: 'server_graphs' , id: server_id, width: width, ip: ip })
+        params = { command: 'server_graphs' , id: server_id, width: width, ip: ip }
         get('/json.php', params)
       end
 
@@ -28,6 +28,16 @@ module Ivapi
 
       def server_recreate
         params = { command: 'server_recreate', id: server_id }
+        get('/json.php', params)
+      end
+
+      def server_reset_password
+        params = { command: 'server_reset_password', id: server_id }
+        get('/json.php', params)
+      end
+
+      def server_flush_iptables
+        params = { command: 'server_flush_iptables', id: server_id }
         get('/json.php', params)
       end
 
