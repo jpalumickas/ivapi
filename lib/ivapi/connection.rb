@@ -14,7 +14,7 @@ module Ivapi
         builder.use FaradayMiddleware::FollowRedirects
         builder.use FaradayMiddleware::Mashify
 
-        builder.use FaradayMiddleware::ParseJson, :content_type => /\bjson$/
+        builder.use FaradayMiddleware::ParseJson
 
         faraday_config_block.call(builder) if faraday_config_block
 
