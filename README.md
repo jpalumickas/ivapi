@@ -6,6 +6,7 @@ Gem which helps to communicate with [iv.lt][] API
 [![Build Status](https://secure.travis-ci.org/jpalumickas/ivapi.png?branch=master)][travis]
 [![Dependency Status](https://gemnasium.com/jpalumickas/ivapi.png?travis)][gemnasium]
 [![Coverage Status](https://coveralls.io/repos/jpalumickas/ivapi/badge.png?branch=master)][coveralls]
+[![Code Climate](https://codeclimate.com/github/jpalumickas/ivapi.png)][codeclimate]
 
 ## Installation
 
@@ -52,6 +53,7 @@ See [LICENSE][] for details.
 [travis]: http://travis-ci.org/jpalumickas/ivapi
 [gemnasium]: https://gemnasium.com/jpalumickas/ivapi
 [coveralls]: https://coveralls.io/r/jpalumickas/ivapi
+[codeclimate]: https://codeclimate.com/github/jpalumickas/ivapi
 
 [iv.lt]: http://www.iv.lt
 [license]: LICENSE.md
