@@ -44,8 +44,8 @@ describe Ivapi::Client::Server do
   end
 
   it "should recreate server" do
-    stub_command("server_recreate", {id: 3}).to_return(json_response("server_recreate.json"))
-    server_recreate = @client.server_recreate
+    stub_command("server_recreate", {id: 3, os: "debian-6.0-x86_64"}).to_return(json_response("server_recreate.json"))
+    server_recreate = @client.server_recreate("debian-6.0-x86_64")
     expect(server_recreate.task_id).to eq("12")
   end
 
@@ -68,8 +68,8 @@ describe Ivapi::Client::Server do
   end
 
   it "should change server hostname" do
-    stub_command("server_domain", {id: 3}).to_return(json_response("server_domain.json"))
-    server_domain = @client.server_domain
+    stub_command("server_domain", {id: 3, domain: "example.com"}).to_return(json_response("server_domain.json"))
+    server_domain = @client.server_domain("example.com")
     expect(server_domain.task_id).to eq("15")
   end
 

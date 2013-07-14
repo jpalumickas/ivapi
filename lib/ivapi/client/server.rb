@@ -50,7 +50,7 @@ module Ivapi
 
       # Send command to recreate the server.
       #
-      # os - The Integer of OS id.
+      # os - The String of OS id.
       # new_password - The String of new server password (8-64 lenght).
       #
       # Returns The Integer of task id.
