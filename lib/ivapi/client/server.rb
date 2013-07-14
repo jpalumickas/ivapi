@@ -77,8 +77,18 @@ module Ivapi
         get('/json.php', params)
       end
 
-      def server_firewall
-
+      # Send command to change firewall settings
+      #
+      # pps - The Integer of incoming ICMP, UDP, TCP joins per second (1000 - 5000).
+      # pps_icmp - The Integer of ICMP packets per second (0 or 10 - 500).
+      # pps_udp - The Integer of UDP packets per second (0 or 10 - 500).
+      # pps_syn - The Integer of TCP SYN packets per second from one IP (0 or 2 - 20).
+      # connlimit - The Integer of collateral connections from one IP (0 or 16 - 512).
+      #
+      # Returns The Hash of new firewall settings.
+      def server_firewall(options={})
+        params = options.merge({ command: 'server_firewall', id: server_id })
+        get('/json.php', params)
       end
 
       # Send command to change server plan.
