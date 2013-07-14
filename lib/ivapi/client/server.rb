@@ -50,17 +50,22 @@ module Ivapi
 
       # Send command to recreate the server.
       #
+      # os - The Integer of OS id.
+      # new_password - The String of new server password (8-64 lenght).
+      #
       # Returns The Integer of task id.
-      def server_recreate
-        params = { command: 'server_recreate', id: server_id }
+      def server_recreate(os, options={})
+        params = options.merge({ command: 'server_recreate', id: server_id, os: os })
         get('/json.php', params)
       end
 
       # Send command to reset server password.
       #
+      # new_password - The String of new server password (8-64 lenght).
+      #
       # Returns The Integer of task id.
-      def server_reset_password
-        params = { command: 'server_reset_password', id: server_id }
+      def server_reset_password(options={})
+        params = options.merge({ command: 'server_reset_password', id: server_id })
         get('/json.php', params)
       end
 
@@ -72,19 +77,30 @@ module Ivapi
         get('/json.php', params)
       end
 
+      def server_firewall
+
+      end
+
       # Send command to change server plan.
       #
+      # cpu - The Integer of GHz (2 - 16)
+      # ram - The Integer of MB (2048 - 16384)
+      # quota - The Integer of GB (20 - 800)
+      # bandwidth - The Integer of Mbps (20 - 400)
+      #
       # Returns The Integer of task id.
-      def server_change
-        params = { command: 'server_change', id: server_id }
+      def server_change(options={})
+        params = options.merge({ command: 'server_change', id: server_id })
         get('/json.php', params)
       end
 
       # Send command to change server hostname.
       #
+      # domain - The String of new server hostname.
+      #
       # Returns The Integer of task id.
-      def server_domain
-        params = { command: 'server_domain', id: server_id }
+      def server_domain(domain)
+        params = { command: 'server_domain', id: server_id, domain: domain }
         get('/json.php', params)
       end
     end
