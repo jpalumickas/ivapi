@@ -61,6 +61,12 @@ describe Ivapi::Client::Server do
     expect(server_flush_iptables.task_id).to eq("16")
   end
 
+  it "should change server firewall settings" do
+    stub_command("server_firewall", {id: 3}).to_return(json_response("server_firewall.json"))
+    server_firewall = @client.server_firewall
+    expect(server_firewall.pps).to eq("1000")
+  end
+
   it "should change server plan" do
     stub_command("server_change", {id: 3}).to_return(json_response("server_change.json"))
     server_change = @client.server_change
