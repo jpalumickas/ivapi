@@ -10,4 +10,16 @@ describe Ivapi::Client do
     }.not_to raise_exception
   end
 
+  describe 'authentication' do
+    it "is authenticated with username and password" do
+      client = Ivapi::Client.new(:username => 'foo', :password => 'bar')
+      expect(client).to be_authenticated
+    end
+
+    it "is not authenticated without username and password" do
+      client = Ivapi::Client.new
+      expect(client).to_not be_authenticated
+    end
+  end
+
 end
