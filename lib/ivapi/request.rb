@@ -7,7 +7,7 @@ module Ivapi
     def request(method, path, options={})
 
       conn_options = {
-        :url => "https://api.iv.lt"
+        url: "https://api.iv.lt"
       }
 
       options.merge!(authentication)
