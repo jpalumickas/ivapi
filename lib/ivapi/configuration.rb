@@ -37,6 +37,7 @@ module Ivapi
       self.adapter = DEFAULT_ADAPTER
       self.username = nil
       self.password = nil
+      self.server_id = nil
       self.user_agent = DEFAULT_USER_AGENT
     end
   end
