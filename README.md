@@ -1,6 +1,6 @@
 # Ivapi
 
-Gem which helps to communicate with [iv.lt][] API
+Gem which helps to communicate with [http://iv.lt][iv.lt] ([http://dedikuoti.lt][dedikuoti.lt]) API.
 
 [![Gem Version](https://badge.fury.io/rb/ivapi.png)][rubygems]
 [![Build Status](https://secure.travis-ci.org/jpalumickas/ivapi.png?branch=master)][travis]
@@ -56,4 +56,5 @@ See [LICENSE][] for details.
 [codeclimate]: https://codeclimate.com/github/jpalumickas/ivapi
 
 [iv.lt]: http://www.iv.lt
+[dedikuoti.lt]: http://www.dedikuoti.lt
 [license]: LICENSE.md
