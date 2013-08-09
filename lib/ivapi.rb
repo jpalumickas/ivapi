@@ -7,7 +7,7 @@ module Ivapi
 
   class << self
 
-    def new(options={})
+    def new(options = {})
         Ivapi::Client.new(options)
     end
 

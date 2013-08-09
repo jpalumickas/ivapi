@@ -30,7 +30,7 @@ module Ivapi
       #
       # Returns the Hash of account credits.
       def account_credits(count = 10)
-        options = { command: 'account_credits', count: count }
+        params = { command: 'account_credits', count: count }
         get('/json.php', params)
       end
 
@@ -38,7 +38,7 @@ module Ivapi
       #
       # Returns the Hash of account bonuses.
       def account_bonuses(count = 10)
-        params = { :command => 'account_bonuses', count: count }
+        params = { command: 'account_bonuses', count: count }
         get('/json.php', params)
       end
     end

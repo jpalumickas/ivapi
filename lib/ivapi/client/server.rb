@@ -18,8 +18,10 @@ module Ivapi
       #           :task_id - The Integer of task id (optional).
       #
       # Returns The Hash of server tasks.
-      def server_tasks(count, options={})
-        params = options.merge({ command: 'server_tasks', id: server_id, count: count })
+      def server_tasks(count, options = {})
+        params = options.merge({
+          command: 'server_tasks', id: server_id, count: count })
+
         get('/json.php', params)
       end
 
@@ -30,7 +32,13 @@ module Ivapi
       #
       # Returns the Hash of server graphs.
       def server_graphs(width, ip)
-        params = { command: 'server_graphs' , id: server_id, width: width, ip: ip }
+        params = {
+          command: 'server_graphs',
+          id: server_id,
+          width: width,
+          ip: ip
+        }
+
         get('/json.php', params)
       end
 
@@ -56,8 +64,13 @@ module Ivapi
       # new_password - The String of new server password (min: 8, max: 64).
       #
       # Returns The Integer of task id.
-      def server_recreate(os, options={})
-        params = options.merge({ command: 'server_recreate', id: server_id, os: os })
+      def server_recreate(os, options = {})
+        params = options.merge({
+          command: 'server_recreate',
+          id: server_id,
+          os: os
+        })
+
         get('/json.php', params)
       end
 
@@ -66,8 +79,12 @@ module Ivapi
       # new_password - The String of new server password (min: 8, max: 64).
       #
       # Returns The Integer of task id.
-      def server_reset_password(options={})
-        params = options.merge({ command: 'server_reset_password', id: server_id })
+      def server_reset_password(options = {})
+        params = options.merge({
+          command: 'server_reset_password',
+          id: server_id
+        })
+
         get('/json.php', params)
       end
 
@@ -91,7 +108,7 @@ module Ivapi
       #             IP (0 or 16 - 512).
       #
       # Returns The Hash of new firewall settings.
-      def server_firewall(options={})
+      def server_firewall(options = {})
         params = options.merge({ command: 'server_firewall', id: server_id })
         get('/json.php', params)
       end
@@ -104,7 +121,7 @@ module Ivapi
       # bandwidth - The Integer of Mbps (minimum: 20, maximum: 400)
       #
       # Returns The Integer of task id.
-      def server_change(options={})
+      def server_change(options = {})
         params = options.merge({ command: 'server_change', id: server_id })
         get('/json.php', params)
       end

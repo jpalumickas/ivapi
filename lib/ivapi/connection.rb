@@ -5,7 +5,7 @@ module Ivapi
   module Connection
     private
 
-    def connection(options={})
+    def connection(options = {})
       connection = Faraday.new(options) do |builder|
 
         builder.request :json

@@ -26,7 +26,7 @@ module Ivapi
     end
 
     def options
-      VALID_OPTIONS_KEYS.inject({}){|o,k| o.merge!(k => send(k)) }
+      VALID_OPTIONS_KEYS.reduce({}) { |a, e| a.merge!(e => send(e)) }
     end
 
     def faraday_config(&block)
