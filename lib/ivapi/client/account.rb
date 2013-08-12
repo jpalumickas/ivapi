@@ -28,6 +28,8 @@ module Ivapi
 
       # Get account credits.
       #
+      # count - The Integer of how many rows need to return (default: 10).
+      #
       # Returns the Hash of account credits.
       def account_credits(count = 10)
         params = { command: 'account_credits', count: count }
@@ -35,6 +37,8 @@ module Ivapi
       end
 
       # Get account bonuses.
+      #
+      # count - The Integer of how many rows need to return (default: 10).
       #
       # Returns the Hash of account bonuses.
       def account_bonuses(count = 10)
