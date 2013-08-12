@@ -60,7 +60,7 @@ module Ivapi
 
       # Send command to recreate the server.
       #
-      # os           - The String of os (operating system) id.
+      # os      - The String of os (operating system) id.
       # options - The Hash options (default: {}):
       #           :new_password - The String of new server
       #                           password (min: 8, max: 64).
@@ -100,7 +100,7 @@ module Ivapi
         get('/json.php', params)
       end
 
-      # Send command to change firewall settings
+      # Send command to change firewall settings.
       #
       # options - The Hash options (default: {}):
       #           :pps       - The Integer of incoming ICMP, UDP, TCP joins per
@@ -123,10 +123,10 @@ module Ivapi
       # Send command to change server plan.
       #
       # options - The Hash options (default: {}):
-      #           :cpu -       The Integer of GHz (min: 2, max: 16)
-      #           :ram -       The Integer of MB (min: 2048, max: 16384)
-      #           :quota -     The Integer of GB (min: 20, max: 800)
-      #           :bandwidth - The Integer of Mbps (min: 20, max: 400)
+      #           :cpu -       The Integer of GHz (min: 2, max: 16).
+      #           :ram -       The Integer of MB (min: 2048, max: 16384).
+      #           :quota -     The Integer of GB (min: 20, max: 800).
+      #           :bandwidth - The Integer of Mbps (min: 20, max: 400).
       #
       # Returns the Integer of task id.
       def server_change(options = {})
