@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ## Usage
 
-Create new account at https://klientams.iv.lt/users.php with description "API".
+Create a new account at https://klientams.iv.lt/users.php with description "API".
 
 ```ruby
 require 'ivapi'
