@@ -35,6 +35,8 @@ describe Ivapi::Client::Account do
       .to eq('Adreso metinis mokestis (example.com)')
   end
 
+  it 'returns account credits'
+
   it 'returns account bonuses' do
     stub_command('account_bonuses', { count: 10 })
       .to_return(json_response('account_bonuses.json'))
