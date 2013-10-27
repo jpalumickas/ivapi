@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'faraday', '~> 0.8'
   gem.add_dependency 'faraday_middleware', '~> 0.9'
   gem.add_dependency 'hashie', '~> 2.0'
-  gem.add_dependency 'multi_json', '~> 1.7'
+  gem.add_dependency 'multi_json', '~> 1.8'
 
   gem.version = Ivapi::VERSION
 end
