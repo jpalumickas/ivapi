@@ -22,6 +22,5 @@ module Ivapi
 
     include Ivapi::Client::Account
     include Ivapi::Client::Server
-
   end
 end

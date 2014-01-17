@@ -5,7 +5,6 @@ module Ivapi
     end
 
     def request(method, path, options = {})
-
       conn_options = {
         url: 'https://api.iv.lt'
       }
