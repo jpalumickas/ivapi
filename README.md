@@ -3,7 +3,7 @@
 Gem which helps to communicate with [http://iv.lt][iv.lt] ([http://dedikuoti.lt][dedikuoti.lt]) API.
 
 [![Gem Version](https://badge.fury.io/rb/ivapi.png)][rubygems]
-[![Build Status](https://secure.travis-ci.org/jpalumickas/ivapi.png?branch=master)][travis]
+[![Build Status](https://secure.travis-ci.org/jpalumickas/ivapi.svg?branch=master)][travis]
 [![Dependency Status](https://gemnasium.com/jpalumickas/ivapi.png?travis)][gemnasium]
 [![Coverage Status](https://coveralls.io/repos/jpalumickas/ivapi/badge.png?branch=master)][coveralls]
 [![Code Climate](https://codeclimate.com/github/jpalumickas/ivapi.png)][codeclimate]
