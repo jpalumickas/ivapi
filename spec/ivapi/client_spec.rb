@@ -17,7 +17,7 @@ describe Ivapi::Client do
       Ivapi.reset!
     end
 
-    it 'is authenticated with configure' do
+    it 'should possible to authenticate with configure' do
       Ivapi.configure do |config|
         config.username = 'foo'
         config.password = 'bar'
@@ -25,12 +25,12 @@ describe Ivapi::Client do
       expect(Ivapi.client).to be_authenticated
     end
 
-    it 'is authenticated with basic username and password' do
+    it 'should possible to authenticate with basic username and password' do
       client = Ivapi::Client.new(username: 'foo', password: 'bar')
       expect(client).to be_authenticated
     end
 
-    it 'is not authenticated without username and password' do
+    it 'should not possible to authenticate without username and password' do
       client = Ivapi::Client.new
       expect(client).to_not be_authenticated
     end
