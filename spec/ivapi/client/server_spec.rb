@@ -51,22 +51,22 @@ describe Ivapi::Client::Server do
     stub_command('server_info', { id: 3 })
       .to_return(json_response('server_info.json'))
     server_info = Ivapi.client.server(3).server_info
-    expect(server_info.se_domain).to eq('server.example.com')
-    expect(server_info.se_info.in_node).to eq('Robinija')
+    expect(server_info.domain).to eq('server.example.com')
+    expect(server_info.info.node).to eq('Robinija')
   end
 
   it 'should return server tasks' do
     stub_command('server_tasks', { id: 3, count: 1 })
       .to_return(json_response('server_tasks.json'))
     server_tasks = Ivapi.client.server(3).server_tasks(1)
-    expect(server_tasks.first.ta_params.domain).to eq('server.example.com')
+    expect(server_tasks.first.params.domain).to eq('server.example.com')
   end
 
   it 'should return server tasks with specified options' do
     stub_command('server_tasks', { id: 3, count: 1, task_id: 1 })
       .to_return(json_response('server_tasks.json'))
     server_tasks = Ivapi.client.server(3).server_tasks(1, { task_id: 1 })
-    expect(server_tasks.first.ta_params.domain).to eq('server.example.com')
+    expect(server_tasks.first.params.domain).to eq('server.example.com')
   end
 
   it 'should return server graphs' do

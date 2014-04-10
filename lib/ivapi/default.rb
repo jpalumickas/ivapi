@@ -1,5 +1,6 @@
 require 'faraday_middleware'
 require 'ivapi/response/raise_error'
+require 'ivapi/response/rename_keys'
 require 'ivapi/version'
 
 module Ivapi
@@ -25,6 +26,7 @@ module Ivapi
       builder.use Ivapi::Response::RaiseError
       builder.use FaradayMiddleware::FollowRedirects
       builder.use FaradayMiddleware::Mashify
+      builder.use Ivapi::Response::RenameKeys
       builder.use FaradayMiddleware::ParseJson
       builder.adapter Faraday.default_adapter
     end

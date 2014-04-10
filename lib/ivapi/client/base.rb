@@ -19,7 +19,6 @@ module Ivapi
         response = connection.send(method) do |request|
           request.url(path, options)
         end
-
         response
       end
 
@@ -30,7 +29,6 @@ module Ivapi
 
         Faraday.new(conn_opts)
       end
-
     end
   end
 end

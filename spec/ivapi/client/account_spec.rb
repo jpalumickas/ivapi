@@ -20,7 +20,7 @@ describe Ivapi::Client::Account do
     end
 
     it 'should return account name' do
-      expect(@info.ac_name).to eq('Name Surname')
+      expect(@info.name).to eq('Name Surname')
     end
   end
 
@@ -37,7 +37,7 @@ describe Ivapi::Client::Account do
     end
 
     it 'should return order cost' do
-      expect(@order.or_cost).to eq('11.11')
+      expect(@order.cost).to eq('11.11')
     end
   end
 
@@ -54,7 +54,7 @@ describe Ivapi::Client::Account do
     end
 
     it 'should return service description' do
-      expect(@service.se_description)
+      expect(@service.description)
         .to eq('Adreso metinis mokestis (example.com)')
     end
   end
@@ -74,7 +74,7 @@ describe Ivapi::Client::Account do
     end
 
     it 'should return bonus description' do
-      expect(@bonus.bo_description)
+      expect(@bonus.description)
         .to eq('SMS +370.61234569 (example)')
     end
   end
