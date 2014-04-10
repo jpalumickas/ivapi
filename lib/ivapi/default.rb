@@ -7,13 +7,17 @@ module Ivapi
   # Default configuration options for {Client}
   module Default
     # Default API endpoint
-    API_ENDPOINT = "https://api.iv.lt".freeze
+    API_ENDPOINT = 'https://api.iv.lt'.freeze
 
     # Default User Agent header string
     USER_AGENT   = "Ivapi ruby gem v#{Ivapi::VERSION}".freeze
 
     # In Faraday 0.9, Faraday::Builder was renamed to Faraday::RackBuilder
-    RACK_BUILDER_CLASS = defined?(Faraday::RackBuilder) ? Faraday::RackBuilder : Faraday::Builder
+    RACK_BUILDER_CLASS = if defined?(Faraday::RackBuilder)
+      Faraday::RackBuilder
+    else
+      Faraday::Builder
+    end
 
     # Default Faraday middleware stack
     MIDDLEWARE = RACK_BUILDER_CLASS.new do |builder|
@@ -30,7 +34,7 @@ module Ivapi
       # Configuration options
       # @return [Hash]
       def options
-        Hash[Ivapi::Configuration.keys.map{ |key| [key, send(key)] }]
+        Hash[Ivapi::Configuration.keys.map { |key| [key, send(key)] }]
       end
 
        # Default GitHub username for Basic Auth from ENV

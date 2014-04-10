@@ -40,7 +40,11 @@ module Ivapi
     private
 
     def options
-      Hash[Ivapi::Configuration.keys.map{|key| [key, instance_variable_get(:"@#{key}")]}]
+      Hash[
+        Ivapi::Configuration.keys.map do |key|
+          [key, instance_variable_get(:"@#{key}")]
+        end
+      ]
     end
   end
 end

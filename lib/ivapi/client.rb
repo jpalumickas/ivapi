@@ -15,7 +15,9 @@ module Ivapi
     def initialize(options = {})
       # Use options passed in, but fall back to module defaults
       Ivapi::Configuration.keys.each do |key|
-        instance_variable_set(:"@#{key}", options[key] || Ivapi.instance_variable_get(:"@#{key}"))
+        instance_variable_set(
+          :"@#{key}", options[key] || Ivapi.instance_variable_get(:"@#{key}")
+        )
       end
     end
 
