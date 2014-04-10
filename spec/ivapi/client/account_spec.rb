@@ -9,7 +9,7 @@ describe Ivapi::Client::Account do
   it 'returns account information' do
     stub_command('account_info').to_return(json_response('account_info.json'))
 
-    account_info = @client.account_info
+    account_info = @client.account.account_info
 
     expect(account_info.ac_name).to eq('Name Surname')
   end
@@ -18,7 +18,7 @@ describe Ivapi::Client::Account do
     stub_command('account_orders')
       .to_return(json_response('account_orders.json'))
 
-    account_orders = @client.account_orders
+    account_orders = @client.account.account_orders
 
     expect(account_orders.count).to eq(3)
     expect(account_orders.first.or_cost).to eq('11.11')
@@ -28,7 +28,7 @@ describe Ivapi::Client::Account do
     stub_command('account_services')
       .to_return(json_response('account_services.json'))
 
-    account_services = @client.account_services
+    account_services = @client.account.account_services
 
     expect(account_services.count).to eq(3)
     expect(account_services.first.se_description)
@@ -41,7 +41,7 @@ describe Ivapi::Client::Account do
     stub_command('account_bonuses', { count: 10 })
       .to_return(json_response('account_bonuses.json'))
 
-    account_bonuses = @client.account_bonuses
+    account_bonuses = @client.account.account_bonuses
 
     expect(account_bonuses[2].bo_description)
       .to eq('SMS +370.61234569 (example)')

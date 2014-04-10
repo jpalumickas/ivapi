@@ -3,42 +3,44 @@ require 'ivapi/version'
 
 module Ivapi
   module Configuration
-    VALID_OPTIONS_KEYS = [
-      :adapter,
-      :faraday_config_block,
-      :username,
-      :password,
-      :user_agent,
-      :server_id
-    ].freeze
 
-    DEFAULT_ADAPTER = Faraday.default_adapter
-    DEFAULT_USER_AGENT = "Ivapi Ruby Gem #{Ivapi::VERSION}".freeze
+    attr_accessor :server_id, :user_agent, :connection_options,
+                  :web_endpoint, :api_endpoint
+    attr_writer :username, :password
 
-    attr_accessor(*VALID_OPTIONS_KEYS)
-
-    def self.extended(base)
-      base.reset
+    def self.keys
+      @keys ||= [
+        :api_endpoint,
+        :server_id,
+        :username,
+        :middleware,
+        :password,
+        :user_agent,
+        :connection_options
+      ]
     end
 
     def configure
       yield self
     end
 
+    # Reset configuration options to default values
+    def reset!
+      Ivapi::Configuration.keys.each do |key|
+        instance_variable_set(:"@#{key}", Ivapi::Default.options[key])
+      end
+      self
+    end
+    alias setup reset!
+
+    def configure
+      yield self
+    end
+
+    private
+
     def options
-      VALID_OPTIONS_KEYS.reduce({}) { |a, e| a.merge!(e => send(e)) }
-    end
-
-    def faraday_config(&block)
-      @faraday_config_block = block
-    end
-
-    def reset
-      self.adapter = DEFAULT_ADAPTER
-      self.username = nil
-      self.password = nil
-      self.server_id = nil
-      self.user_agent = DEFAULT_USER_AGENT
+      Hash[Ivapi::Configuration.keys.map{|key| [key, instance_variable_get(:"@#{key}")]}]
     end
   end
 end

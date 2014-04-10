@@ -1,8 +1,8 @@
 module Ivapi
   module Authentication
     def authentication
-      if username && password
-        { nick: username, password: password }
+      if @username && @password
+        { nick: @username, password: @password }
       else
         {}
       end

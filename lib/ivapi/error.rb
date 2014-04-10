@@ -1,6 +1,24 @@
 module Ivapi
-
   class Error < StandardError
+    # Returns the appropriate Ivapi::Error sublcass based
+    # on status and response message.
+    #
+    # response - The Hash of HTTP response.
+    #
+    # Returns the Ivapi::Error.
+    def self.from_response(response)
+      status  = response[:status].to_i
+      body    = response[:body].to_s
+      headers = response[:response_headers]
+
+      if klass = case status
+                 when 400 then Ivapi::BadRequest
+                 when 401 then Ivapi::Unauthorized
+                 when 403 then Ivapi::Forbidden
+                 end
+        klass.new(response)
+      end
+    end
   end
 
   # Raised when iv.lt returns a 400 HTTP status code
@@ -11,25 +29,4 @@ module Ivapi
 
   # Raised when iv.lt returns a 403 HTTP status code
   class Forbidden < Error; end
-
-  # Raised when iv.lt returns a 404 HTTP status code
-  class NotFound < Error; end
-
-  # Raised when iv.lt returns a 406 HTTP status code
-  class NotAcceptable < Error; end
-
-  # Raised when iv.lt returns a 422 HTTP status code
-  class UnprocessableEntity < Error; end
-
-  # Raised when iv.lt returns a 500 HTTP status code
-  class InternalServerError < Error; end
-
-  # Raised when iv.lt returns a 501 HTTP status code
-  class NotImplemented < Error; end
-
-  # Raised when iv.lt returns a 502 HTTP status code
-  class BadGateway < Error; end
-
-  # Raised when iv.lt returns a 503 HTTP status code
-  class ServiceUnavailable < Error; end
 end

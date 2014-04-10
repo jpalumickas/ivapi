@@ -13,7 +13,19 @@ describe Ivapi::Client do
   end
 
   describe 'authentication' do
-    it 'is authenticated with username and password' do
+    after(:each) do
+      Ivapi.reset!
+    end
+
+    it 'is authenticated with configure' do
+      Ivapi.configure do |config|
+        config.username = 'foo'
+        config.password = 'bar'
+      end
+      expect(Ivapi.client).to be_authenticated
+    end
+
+    it 'is authenticated with basic username and password' do
       client = Ivapi::Client.new(username: 'foo', password: 'bar')
       expect(client).to be_authenticated
     end

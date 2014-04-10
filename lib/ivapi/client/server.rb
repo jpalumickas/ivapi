@@ -1,6 +1,12 @@
 module Ivapi
   class Client
-    module Server
+    class Server < Base
+      attr_reader :server_id
+
+      def initialize(client, server_id)
+        super(client)
+        @server_id = server_id
+      end
 
       # Get information about server.
       #

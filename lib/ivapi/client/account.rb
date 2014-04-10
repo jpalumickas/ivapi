@@ -1,6 +1,6 @@
 module Ivapi
   class Client
-    module Account
+    class Account < Base
 
       # Get information about account.
       #
