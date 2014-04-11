@@ -15,7 +15,7 @@ describe Ivapi::Client::Server do
 
   describe 'server information' do
     before(:each) do
-      stub_command('server_info', { id: 3 })
+      stub_command('server_info', id: 3)
         .to_return(json_response('server_info.json'))
       @info = Ivapi.server.information
     end
@@ -35,7 +35,7 @@ describe Ivapi::Client::Server do
 
   describe 'server tasks' do
     before(:each) do
-      stub_command('server_tasks', { id: 3, count: 1 })
+      stub_command('server_tasks', id: 3, count: 1)
         .to_return(json_response('server_tasks.json'))
       @tasks = Ivapi.server.tasks(1)
       @task = @tasks.first
@@ -48,7 +48,7 @@ describe Ivapi::Client::Server do
 
   describe 'server graphs' do
     before(:each) do
-      stub_command('server_graphs', { id: 3, width: 1000, ip: '12.23.34.45' })
+      stub_command('server_graphs', id: 3, width: 1000, ip: '12.23.34.45')
         .to_return(json_response('server_graphs.json'))
       @graphs = Ivapi.server.graphs(1000, '12.23.34.45')
     end
@@ -58,9 +58,8 @@ describe Ivapi::Client::Server do
     end
   end
 
-
   it 'should return server tasks with specified options' do
-    stub_command('server_tasks', { id: 3, count: 1, task_id: 1 })
+    stub_command('server_tasks', id: 3, count: 1, task_id: 1)
       .to_return(json_response('server_tasks.json'))
     server_tasks = Ivapi.client.server(3).tasks(1, { task_id: 1 })
     expect(server_tasks.first.params.domain).to eq('server.example.com')
@@ -80,7 +79,7 @@ describe Ivapi::Client::Server do
 
   describe 'server reboot' do
     before(:each) do
-      stub_command('server_reboot', { id: 3 })
+      stub_command('server_reboot', id: 3)
         .to_return(json_response('server_reboot.json'))
       @reboot_response = Ivapi.server.reboot
     end
@@ -92,7 +91,7 @@ describe Ivapi::Client::Server do
 
   describe 'server recreate server' do
     before(:each) do
-      stub_command('server_recreate', { id: 3, os: 'debian-6.0-x86_64' })
+      stub_command('server_recreate', id: 3, os: 'debian-6.0-x86_64' )
        .to_return(json_response('server_recreate.json'))
       @recreate_response = Ivapi.server.recreate('debian-6.0-x86_64')
     end
@@ -104,7 +103,7 @@ describe Ivapi::Client::Server do
 
   describe 'reset server password' do
     before(:each) do
-      stub_command('server_reset_password', { id: 3 })
+      stub_command('server_reset_password', id: 3)
         .to_return(json_response('server_reset_password.json'))
       @reset_pwd_response = Ivapi.server.reset_password
     end
@@ -116,7 +115,7 @@ describe Ivapi::Client::Server do
 
   describe 'flush server iptables' do
     before(:each) do
-      stub_command('server_flush_iptables', { id: 3 })
+      stub_command('server_flush_iptables', id: 3)
         .to_return(json_response('server_flush_iptables.json'))
       @flush_response = Ivapi.server.flush_iptables
     end
@@ -128,7 +127,7 @@ describe Ivapi::Client::Server do
 
   describe 'change server firewall settings' do
     before(:each) do
-      stub_command('server_firewall', { id: 3 })
+      stub_command('server_firewall', id: 3)
         .to_return(json_response('server_firewall.json'))
       @firewall = Ivapi.server.firewall
     end
@@ -140,7 +139,7 @@ describe Ivapi::Client::Server do
 
   describe 'change server plan' do
     before(:each) do
-      stub_command('server_change', { id: 3 })
+      stub_command('server_change', id: 3)
         .to_return(json_response('server_change.json'))
       @plan_response = Ivapi.server.change
     end
@@ -152,7 +151,7 @@ describe Ivapi::Client::Server do
 
   describe 'change server hostname' do
     before(:each) do
-      stub_command('server_domain', { id: 3, domain: 'example.com' })
+      stub_command('server_domain', id: 3, domain: 'example.com')
         .to_return(json_response('server_domain.json'))
       @hostname_response = Ivapi.server.domain('example.com')
     end
