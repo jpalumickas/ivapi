@@ -67,7 +67,7 @@ describe Ivapi::Client::Server do
 
   describe 'server os' do
     before(:each) do
-      stub_command('server_os', { id: 3 })
+      stub_command('server_os', id: 3)
         .to_return(json_response('server_os.json'))
       @os = Ivapi.server.os['debian-6.0-x86_64']
     end
