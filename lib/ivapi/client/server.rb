@@ -11,10 +11,11 @@ module Ivapi
       # Get information about server.
       #
       # Returns the Hash of server information.
-      def server_info
+      def information
         params = { command: 'server_info', id: server_id }
         get('/json.php', params)
       end
+      alias_method :info, :information
 
       # Get server tasks.
       #
@@ -24,7 +25,7 @@ module Ivapi
       #           :task_id - The Integer of task id (optional).
       #
       # Returns the Hash of server tasks.
-      def server_tasks(count, options = {})
+      def tasks(count, options = {})
         params = options.merge({
           command: 'server_tasks', id: server_id, count: count })
 
@@ -37,7 +38,7 @@ module Ivapi
       # ip    - The String of ip, from which graphs can be viewed.
       #
       # Returns the Hash of server graphs.
-      def server_graphs(width, ip)
+      def graphs(width, ip)
         params = {
           command: 'server_graphs',
           id: server_id,
@@ -51,7 +52,7 @@ module Ivapi
       # Get all available server operating systems.
       #
       # Returns the Hash of available server os.
-      def server_os
+      def os
         params = { command: 'server_os', id: server_id }
         get('/json.php', params)
       end
@@ -59,7 +60,7 @@ module Ivapi
       # Send command to reboot the server.
       #
       # Returns the Integer of task id.
-      def server_reboot
+      def reboot
         params = { command: 'server_reboot', id: server_id }
         get('/json.php', params)
       end
@@ -72,7 +73,7 @@ module Ivapi
       #                           password (min: 8, max: 64).
       #
       # Returns the Integer of task id.
-      def server_recreate(os, options = {})
+      def recreate(os, options = {})
         params = options.merge({
           command: 'server_recreate',
           id: server_id,
@@ -89,7 +90,7 @@ module Ivapi
       #                           password (min: 8, max: 64).
       #
       # Returns the Integer of task id.
-      def server_reset_password(options = {})
+      def reset_password(options = {})
         params = options.merge({
           command: 'server_reset_password',
           id: server_id
@@ -101,7 +102,7 @@ module Ivapi
       # Send command to clean server firewall rules.
       #
       # Returns the Integer of task id.
-      def server_flush_iptables
+      def flush_iptables
         params = { command: 'server_flush_iptables', id: server_id }
         get('/json.php', params)
       end
@@ -121,7 +122,7 @@ module Ivapi
       #                        IP (0 or min: 16, max: 512).
       #
       # Returns the Hash of new firewall settings.
-      def server_firewall(options = {})
+      def firewall(options = {})
         params = options.merge({ command: 'server_firewall', id: server_id })
         get('/json.php', params)
       end
@@ -135,7 +136,7 @@ module Ivapi
       #           :bandwidth - The Integer of Mbps (min: 20, max: 400).
       #
       # Returns the Integer of task id.
-      def server_change(options = {})
+      def change(options = {})
         params = options.merge({ command: 'server_change', id: server_id })
         get('/json.php', params)
       end
@@ -145,10 +146,11 @@ module Ivapi
       # domain - The String of new server hostname.
       #
       # Returns the Integer of task id.
-      def server_domain(domain)
+      def domain(domain)
         params = { command: 'server_domain', id: server_id, domain: domain }
         get('/json.php', params)
       end
+      alias_method :hostname, :domain
     end
   end
 end

@@ -36,4 +36,37 @@ describe Ivapi::Client do
     end
   end
 
+  describe 'setting server id from client' do
+    before(:each) do
+      Ivapi.reset!
+    end
+
+    it 'should not have server id' do
+      client = Ivapi::Client.new(username: 'foo', password: 'bar')
+      expect(client.server_id).to be_nil
+    end
+
+    it 'should have server id when set manualy' do
+      client = Ivapi::Client.new(username: 'foo', password: 'bar', server_id: 3)
+      expect(client.server_id).to eq(3)
+    end
+  end
+
+  describe 'manualy setting server id' do
+    before(:each) do
+      Ivapi.reset!
+      Ivapi.configure do |config|
+        config.username = 'foo'
+        config.password = 'bar'
+      end
+    end
+
+    it 'should not have server id' do
+      expect(Ivapi.server_id).to be_nil
+    end
+
+    it 'should have server id when set manualy' do
+      expect(Ivapi.server(3).server_id).to eq(3)
+    end
+  end
 end
