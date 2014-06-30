@@ -1,6 +1,6 @@
 # Ivapi
 
-Gem which helps to communicate with [http://iv.lt][iv.lt] ([http://dedikuoti.lt][dedikuoti.lt]) API.
+Gem which helps to communicate with Interneto vizija [http://iv.lt][iv.lt] ([http://dedikuoti.lt][dedikuoti.lt]) API.
 
 [![Gem Version](https://badge.fury.io/rb/ivapi.svg)][rubygems]
 [![Build Status](https://secure.travis-ci.org/jpalumickas/ivapi.svg?branch=master)][travis]
@@ -26,14 +26,37 @@ Or install it yourself as:
 
 Create a new account at https://klientams.iv.lt/users.php with description "API".
 
-```ruby
-require 'ivapi'
+### Authentication
+```rb
+Ivapi::Client.new(username: 'foo', password: 'bar')
+```
 
-client = Ivapi::Client.new(username: 'foo', password: 'bar')
-account_info = client.account_info
+Or create file under `config/initializers/ivapi.rb`
 
-puts "Account name: #{account_info.ac_name}"
-puts "Account created: #{account_info.ac_created}"
+```rb
+Ivapi.configure do |config|
+  config.username = 'foo'
+  config.password = 'bar'
+end
+```
+
+### Account information
+
+Basic information
+```rb
+Ivapi.account.information
+```
+
+Orders
+```
+Ivapi.account.orders
+```
+
+### Server information
+
+Basic information
+```rb
+Ivapi.server.information
 ```
 
 ## Supported Ruby Versions
@@ -46,7 +69,7 @@ implementations:
 * Ruby 2.1.0
 
 ## Copyright
-Copyright (c) 2012-2013 Justas Palumickas.
+Copyright (c) 2012-2014 Justas Palumickas.
 See [LICENSE][] for details.
 
 [rubygems]: https://rubygems.org/gems/ivapi

@@ -1,26 +1,36 @@
+require 'ivapi/configuration'
 require 'ivapi/authentication'
-require 'ivapi/connection'
-require 'ivapi/request'
 
+require 'ivapi/client/base'
 require 'ivapi/client/account'
 require 'ivapi/client/server'
 
 module Ivapi
   class Client
-    attr_accessor(*Configuration::VALID_OPTIONS_KEYS)
+    include Ivapi::Authentication
+    include Ivapi::Configuration
+
+    attr_reader *Ivapi::Configuration.keys
 
     def initialize(options = {})
-      options = Ivapi.options.merge(options)
-      Configuration::VALID_OPTIONS_KEYS.each do |key|
-       send("#{key}=", options[key])
+      # Use options passed in, but fall back to module defaults
+      Ivapi::Configuration.keys.each do |key|
+        instance_variable_set(
+          :"@#{key}", options[key] || Ivapi.instance_variable_get(:"@#{key}")
+        )
       end
     end
 
-    include Ivapi::Authentication
-    include Ivapi::Connection
-    include Ivapi::Request
+    def account
+      Ivapi::Client::Account.new(self)
+    end
 
-    include Ivapi::Client::Account
-    include Ivapi::Client::Server
+    def server(server_id = @server_id)
+      Ivapi::Client::Server.new(self, server_id)
+    end
+
+    def same_options?(opts)
+      opts.hash == options.hash
+    end
   end
 end
