@@ -24,6 +24,9 @@ Or install it yourself as:
 
 ## Usage
 
+> The Ivapi Wiki has lots of additional information about this gem including many examples. Please browse the Wiki at:
+https://github.com/jpalumickas/ivapi/wiki
+
 Create a new account at https://klientams.iv.lt/users.php with description "API".
 
 ### Authentication
@@ -58,6 +61,7 @@ Basic information
 ```rb
 Ivapi.server.information
 ```
+
 
 ## Supported Ruby Versions
 
