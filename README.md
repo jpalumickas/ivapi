@@ -2,11 +2,11 @@
 
 Gem which helps to communicate with Interneto vizija [http://iv.lt][iv.lt] ([http://dedikuoti.lt][dedikuoti.lt]) API.
 
-[![Gem Version](https://badge.fury.io/rb/ivapi.svg)][rubygems]
-[![Build Status](https://secure.travis-ci.org/jpalumickas/ivapi.svg?branch=master)][travis]
-[![Dependency Status](https://gemnasium.com/jpalumickas/ivapi.png?travis)][gemnasium]
-[![Coverage Status](http://img.shields.io/coveralls/jpalumickas/ivapi/master.svg)][coveralls]
-[![Code Climate](http://img.shields.io/codeclimate/github/jpalumickas/ivapi.svg)][codeclimate]
+[![Gem Version](http://img.shields.io/gem/v/ivapi.svg?style=flat)][rubygems]
+[![Build Status](http://img.shields.io/travis/jpalumickas/ivapi.svg?style=flat)][travis]
+[![Dependency Status](http://img.shields.io/gemnasium/jpalumickas/ivapi.svg?style=flat)][gemnasium]
+[![Coverage Status](http://img.shields.io/coveralls/jpalumickas/ivapi/master.svg?style=flat)][coveralls]
+[![Code Climate](http://img.shields.io/codeclimate/github/jpalumickas/ivapi.svg?style=flat)][codeclimate]
 
 ## Installation
 
