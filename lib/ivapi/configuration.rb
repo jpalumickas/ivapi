@@ -3,7 +3,6 @@ require 'ivapi/version'
 
 module Ivapi
   module Configuration
-
     attr_accessor :server_id, :user_agent, :connection_options,
                   :web_endpoint, :api_endpoint
     attr_writer :username, :password
@@ -31,7 +30,7 @@ module Ivapi
       end
       self
     end
-    alias setup reset!
+    alias_method :setup, :reset!
 
     def configure
       yield self

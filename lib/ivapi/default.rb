@@ -4,7 +4,6 @@ require 'ivapi/response/rename_keys'
 require 'ivapi/version'
 
 module Ivapi
-
   # Default configuration options for {Client}
   module Default
     # Default API endpoint
@@ -23,23 +22,24 @@ module Ivapi
     # Default Faraday middleware stack
     MIDDLEWARE = RACK_BUILDER_CLASS.new do |builder|
       builder.request :json
+
       builder.use Ivapi::Response::RaiseError
       builder.use FaradayMiddleware::FollowRedirects
       builder.use FaradayMiddleware::Mashify
       builder.use Ivapi::Response::RenameKeys
       builder.use FaradayMiddleware::ParseJson
+
       builder.adapter Faraday.default_adapter
     end
 
     class << self
-
       # Configuration options
       # @return [Hash]
       def options
         Hash[Ivapi::Configuration.keys.map { |key| [key, send(key)] }]
       end
 
-       # Default GitHub username for Basic Auth from ENV
+      # Default GitHub username for Basic Auth from ENV
       # @return [String]
       def username
         ENV['IVAPI_USERNAME']

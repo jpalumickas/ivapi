@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe Ivapi::Client do
 
+  after(:each) do
+    Ivapi.reset!
+  end
+
   it 'works with basic auth and password' do
     url = 'https://api.iv.lt/json.php?nick=foo&password=bar&command=version'
 
@@ -13,15 +17,12 @@ describe Ivapi::Client do
   end
 
   describe 'authentication' do
-    after(:each) do
-      Ivapi.reset!
-    end
-
     it 'should possible to authenticate with configure' do
       Ivapi.configure do |config|
         config.username = 'foo'
         config.password = 'bar'
       end
+
       expect(Ivapi.client).to be_authenticated
     end
 
@@ -37,10 +38,6 @@ describe Ivapi::Client do
   end
 
   describe 'setting server id from client' do
-    before(:each) do
-      Ivapi.reset!
-    end
-
     it 'should not have server id' do
       client = Ivapi::Client.new(username: 'foo', password: 'bar')
       expect(client.server_id).to be_nil
@@ -54,7 +51,6 @@ describe Ivapi::Client do
 
   describe 'manualy setting server id' do
     before(:each) do
-      Ivapi.reset!
       Ivapi.configure do |config|
         config.username = 'foo'
         config.password = 'bar'
