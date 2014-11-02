@@ -23,11 +23,11 @@ module Ivapi
     MIDDLEWARE = RACK_BUILDER_CLASS.new do |builder|
       builder.request :json
 
-      builder.use Ivapi::Response::RaiseError
       builder.use FaradayMiddleware::FollowRedirects
       builder.use FaradayMiddleware::Mashify
       builder.use Ivapi::Response::RenameKeys
       builder.use FaradayMiddleware::ParseJson
+      builder.use Ivapi::Response::RaiseError
 
       builder.adapter Faraday.default_adapter
     end
@@ -39,7 +39,7 @@ module Ivapi
         Hash[Ivapi::Configuration.keys.map { |key| [key, send(key)] }]
       end
 
-      # Default GitHub username for Basic Auth from ENV
+      # Default Ivapi username for Basic Auth from ENV
       # @return [String]
       def username
         ENV['IVAPI_USERNAME']
@@ -56,7 +56,7 @@ module Ivapi
         MIDDLEWARE
       end
 
-      # Default GitHub password for Basic Auth from ENV
+      # Default Ivapi password for Basic Auth from ENV
       # @return [String]
       def password
         ENV['IVAPI_PASSWORD']

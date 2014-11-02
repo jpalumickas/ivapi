@@ -1,7 +1,6 @@
 module Ivapi
   class Client
     class Account < Base
-
       # Get information about account.
       #
       # Returns the Hash of account information.
@@ -9,6 +8,7 @@ module Ivapi
         params = { command: 'account_info' }
         get('/json.php', params)
       end
+      alias_method :info, :information
 
       # Get account orders.
       #

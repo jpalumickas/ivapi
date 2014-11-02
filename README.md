@@ -31,7 +31,7 @@ Create a new account at https://klientams.iv.lt/users.php with description "API"
 
 ### Authentication
 ```rb
-Ivapi::Client.new(username: 'foo', password: 'bar')
+client = Ivapi::Client.new(username: 'foo', password: 'bar')
 ```
 
 Or create file under `config/initializers/ivapi.rb`

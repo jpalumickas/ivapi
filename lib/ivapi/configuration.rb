@@ -4,8 +4,7 @@ require 'ivapi/version'
 module Ivapi
   module Configuration
     attr_accessor :server_id, :user_agent, :connection_options,
-                  :web_endpoint, :api_endpoint
-    attr_writer :username, :password
+                  :web_endpoint, :api_endpoint, :username, :password
 
     def self.keys
       @keys ||= [
@@ -21,6 +20,7 @@ module Ivapi
 
     def configure
       yield self
+      true
     end
 
     # Reset configuration options to default values
@@ -31,10 +31,6 @@ module Ivapi
       self
     end
     alias_method :setup, :reset!
-
-    def configure
-      yield self
-    end
 
     private
 

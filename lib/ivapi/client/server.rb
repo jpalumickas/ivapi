@@ -26,8 +26,9 @@ module Ivapi
       #
       # Returns the Hash of server tasks.
       def tasks(count, options = {})
-        params = options.merge({
-          command: 'server_tasks', id: server_id, count: count })
+        params = options.merge(
+          command: 'server_tasks', id: server_id, count: count
+        )
 
         get('/json.php', params)
       end
@@ -74,11 +75,9 @@ module Ivapi
       #
       # Returns the Integer of task id.
       def recreate(os, options = {})
-        params = options.merge({
-          command: 'server_recreate',
-          id: server_id,
-          os: os
-        })
+        params = options.merge(
+          command: 'server_recreate', id: server_id, os: os
+        )
 
         get('/json.php', params)
       end
@@ -91,10 +90,7 @@ module Ivapi
       #
       # Returns the Integer of task id.
       def reset_password(options = {})
-        params = options.merge({
-          command: 'server_reset_password',
-          id: server_id
-        })
+        params = options.merge(command: 'server_reset_password', id: server_id)
 
         get('/json.php', params)
       end
@@ -123,7 +119,7 @@ module Ivapi
       #
       # Returns the Hash of new firewall settings.
       def firewall(options = {})
-        params = options.merge({ command: 'server_firewall', id: server_id })
+        params = options.merge(command: 'server_firewall', id: server_id)
         get('/json.php', params)
       end
 
@@ -137,7 +133,7 @@ module Ivapi
       #
       # Returns the Integer of task id.
       def change(options = {})
-        params = options.merge({ command: 'server_change', id: server_id })
+        params = options.merge(command: 'server_change', id: server_id)
         get('/json.php', params)
       end
 

@@ -22,7 +22,7 @@ module Ivapi
         response
       end
 
-      def connection(options = {})
+      def connection(_options = {})
         conn_opts = client.connection_options
         conn_opts[:url] = client.api_endpoint
         conn_opts[:builder] = client.middleware if client.middleware
