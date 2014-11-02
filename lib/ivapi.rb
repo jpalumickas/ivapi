@@ -1,6 +1,5 @@
 require 'ivapi/client'
 require 'ivapi/default'
-require 'pry'
 
 module Ivapi
   extend Ivapi::Configuration
@@ -17,10 +16,6 @@ module Ivapi
     def respond_to_missing?(method_name, include_private = false)
       client.respond_to?(method_name, include_private)
     end if RUBY_VERSION >= '1.9'
-
-    def respond_to?(method_name, include_private = false)
-      client.respond_to?(method_name, include_private) || super
-    end if RUBY_VERSION < '1.9'
 
     private
 
