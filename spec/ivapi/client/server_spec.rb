@@ -61,7 +61,7 @@ describe Ivapi::Client::Server do
   it 'should return server tasks with specified options' do
     stub_command('server_tasks', id: 3, count: 1, task_id: 1)
       .to_return(json_response('server_tasks.json'))
-    server_tasks = Ivapi.client.server(3).tasks(1, { task_id: 1 })
+    server_tasks = Ivapi.client.server(3).tasks(1, task_id: 1)
     expect(server_tasks.first.params.domain).to eq('server.example.com')
   end
 
@@ -92,7 +92,7 @@ describe Ivapi::Client::Server do
   describe 'server recreate server' do
     before(:each) do
       stub_command('server_recreate', id: 3, os: 'debian-6.0-x86_64')
-       .to_return(json_response('server_recreate.json'))
+        .to_return(json_response('server_recreate.json'))
       @recreate_response = Ivapi.server.recreate('debian-6.0-x86_64')
     end
 

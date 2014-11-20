@@ -57,9 +57,11 @@ def iv_url(url)
 end
 
 def iv_command_url(command)
+  data = { command: command }
+
   if @client && @client.authenticated?
-    iv_url("?nick=#{@client.username}&password=#{@client.password}&command=#{command}")
-  else
-    iv_url("?command=#{command}")
+    data.merge(nick: @client.username, password: @client.password)
   end
+
+  iv_url('/json.php?' + URI.encode_www_form(data))
 end

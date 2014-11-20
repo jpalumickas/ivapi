@@ -15,7 +15,7 @@ describe Ivapi::Client::Account do
   describe 'account information' do
     before(:each) do
       stub_command('account_info')
-       .to_return(json_response('account_info.json'))
+        .to_return(json_response('account_info.json'))
       @info = Ivapi.account.information
     end
 
@@ -64,7 +64,7 @@ describe Ivapi::Client::Account do
   describe 'account bonuses' do
     before(:each) do
       stub_command('account_bonuses', count: 10)
-       .to_return(json_response('account_bonuses.json'))
+        .to_return(json_response('account_bonuses.json'))
       @account_bonuses = Ivapi.account.bonuses
       @bonus = @account_bonuses[2]
     end

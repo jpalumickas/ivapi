@@ -7,11 +7,6 @@ describe Ivapi::Client do
   end
 
   it 'works with basic auth and password' do
-    url = 'https://api.iv.lt/json.php?nick=foo&password=bar&command=version'
-
-    stub_request(:get, url)
-      .to_return(status: 200, body: '{"commits":[]}', headers: {})
-
     expect { Ivapi::Client.new(username: 'foo', password: 'bar') }
       .not_to raise_exception
   end
