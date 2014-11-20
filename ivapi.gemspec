@@ -7,10 +7,12 @@ Gem::Specification.new do |gem|
   gem.name = 'ivapi'
   gem.author = 'Justas Palumickas'
   gem.email = 'jpalumickas@gmail.com'
-  gem.description = %q{ Gem which helps to communicate with http://www.iv.lt API. }
-  gem.summary = gem.description
+  gem.description = 'Gem which helps to communicate with http://www.iv.lt API.'
+  gem.summary = 'Ruby wrapper for working with Interneto Vizija API.'
   gem.homepage = 'https://github.com/jpalumickas/ivapi/'
   gem.license = 'MIT'
+  gem.required_ruby_version = '>= 1.9.3'
+  gem.requirements << 'Interneto Vizija allow to use API only on them servers.'
 
   gem.files = `git ls-files -z`.split("\x0")
   gem.executables = gem.files.grep(%r{^bin/}) { |f| File.basename(f) }
