@@ -1,40 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Ivapi by jpalumickas</title>
+    <meta name="viewport" content="width=640">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Ivapi by jpalumickas</title>
   </head>
+
   <body>
-    <div class="wrapper">
+    <a id="forkme_banner" href="https://github.com/jpalumickas/ivapi">View on GitHub</a>
+    <div class="shell">
+
       <header>
-        <h1 class="header">Ivapi</h1>
-        <p class="header">Gem which helps to communicate with iv.lt API</p>
-
-        <ul>
-          <li class="download"><a class="buttons" href="https://github.com/jpalumickas/ivapi/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/jpalumickas/ivapi/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/jpalumickas/ivapi">View On GitHub</a></li>
-        </ul>
-
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/jpalumickas">jpalumickas</a></p>
-
-
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Ivapi</h1>
+            <h2>Gem which helps to communicate with iv.lt API</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
       </header>
-      <section>
-        <h1>Ivapi</h1>
 
-<p>Gem which helps to communicate with <a href="http://www.iv.lt">iv.lt</a> API</p>
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/jpalumickas/ivapi/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/jpalumickas/ivapi/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
 
-<h2>Installation</h2>
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a id="ivapi" class="anchor" href="#ivapi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ivapi</h1>
+
+<p>Gem which helps to communicate with Interneto vizija <a href="http://www.iv.lt">http://iv.lt</a> (<a href="http://www.dedikuoti.lt">http://dedikuoti.lt</a>) API.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <p>Add this line to your application's Gemfile:</p>
 
@@ -51,38 +69,80 @@
 <pre><code>$ gem install ivapi
 </code></pre>
 
-<h2>Usage</h2>
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Create new account at <a href="https://klientams.iv.lt/users.php">https://klientams.iv.lt/users.php</a> with description "API".</p>
+<blockquote>
+<p>The Ivapi Wiki has lots of additional information about this gem including many examples. Please browse the Wiki at:
+<a href="https://github.com/jpalumickas/ivapi/wiki">https://github.com/jpalumickas/ivapi/wiki</a></p>
+</blockquote>
 
-<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'ivapi'</span>
+<p>Create a new account at <a href="https://klientams.iv.lt/users.php">https://klientams.iv.lt/users.php</a> with description "API".</p>
 
-<span class="n">client</span> <span class="o">=</span> <span class="ss">Ivapi</span><span class="p">:</span><span class="ss">:Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">username</span><span class="p">:</span> <span class="s1">'foo'</span><span class="p">,</span> <span class="ss">password</span><span class="p">:</span> <span class="s1">'bar'</span><span class="p">)</span>
-<span class="n">account_info</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">account_info</span>
+<h3>
+<a id="authentication" class="anchor" href="#authentication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authentication</h3>
 
-<span class="nb">puts</span> <span class="s2">"Account name: </span><span class="si">#{</span><span class="n">account_info</span><span class="o">.</span><span class="n">ac_name</span><span class="si">}</span><span class="s2">"</span>
-<span class="nb">puts</span> <span class="s2">"Account created: </span><span class="si">#{</span><span class="n">account_info</span><span class="o">.</span><span class="n">ac_created</span><span class="si">}</span><span class="s2">"</span>
-</pre></div>
+<div class="highlight highlight-rb"><pre>client <span class="pl-k">=</span> <span class="pl-s3">Ivapi</span>::<span class="pl-s3">Client</span>.<span class="pl-k">new</span>(<span class="pl-c1">username:</span> <span class="pl-s1"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span>, <span class="pl-c1">password:</span> <span class="pl-s1"><span class="pl-pds">'</span>bar<span class="pl-pds">'</span></span>)</pre></div>
 
-<h2>Supported Ruby Versions</h2>
+<p>Or create file under <code>config/initializers/ivapi.rb</code></p>
+
+<div class="highlight highlight-rb"><pre><span class="pl-s3">Ivapi</span>.configure <span class="pl-k">do </span>|<span class="pl-vo">config</span>|
+  config.username <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span>
+  config.password <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">'</span>bar<span class="pl-pds">'</span></span>
+<span class="pl-k">end</span></pre></div>
+
+<h3>
+<a id="account-information" class="anchor" href="#account-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Account information</h3>
+
+<p>Basic information</p>
+
+<div class="highlight highlight-rb"><pre><span class="pl-s3">Ivapi</span>.account.information</pre></div>
+
+<p>Orders</p>
+
+<pre><code>Ivapi.account.orders
+</code></pre>
+
+<h3>
+<a id="server-information" class="anchor" href="#server-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Server information</h3>
+
+<p>Basic information</p>
+
+<div class="highlight highlight-rb"><pre><span class="pl-s3">Ivapi</span>.server.information</pre></div>
+
+<h2>
+<a id="supported-ruby-versions" class="anchor" href="#supported-ruby-versions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supported Ruby Versions</h2>
 
 <p>This library aims to support and is <a href="http://travis-ci.org/jpalumickas/ivapi">tested against</a> the following Ruby
 implementations:</p>
 
 <ul>
-<li>Ruby 1.9.2</li>
 <li>Ruby 1.9.3</li>
 <li>Ruby 2.0.0</li>
-</ul><h2>Copyright</h2>
+<li>Ruby 2.1.0</li>
+</ul>
 
-<p>Copyright (c) 2012-2013 Justas Palumickas.
+<h2>
+<a id="copyright" class="anchor" href="#copyright" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copyright</h2>
+
+<p>Copyright (c) 2012-2014 Justas Palumickas.
 See <a href="LICENSE.md">LICENSE</a> for details.</p>
       </section>
+
       <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/jpalumickas">jpalumickas</a> can be found on <a href="https://github.com/jpalumickas/ivapi">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
       </footer>
+
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
+
+    
   </body>
 </html>
