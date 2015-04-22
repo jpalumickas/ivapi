@@ -54,7 +54,7 @@ describe Ivapi::Client::Server do
     end
 
     it 'should return cpu weekly' do
-      expect(@graphs.cpu_weekly).to eq('//stats.serveriai.lt/graph.php?Ds252x+6Lek1o0SV2+u99fqhNaiflbCcb6QuGzlRJ9yy2R1VycHOc6baz3zRB6Am1RJcniVrpCjj+A47DMwkyfQ==')
+      expect(@graphs.cpu_weekly).to eq('//stats.serveriai.lt/graph.php?Ds252x')
     end
   end
 

@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Ivapi::Client do
-
   after(:each) do
     Ivapi.reset!
   end

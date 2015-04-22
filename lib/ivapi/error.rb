@@ -8,16 +8,14 @@ module Ivapi
     # Returns the Ivapi::Error.
     def self.from_response(response)
       status  = response[:status].to_i
-      body    = response[:body].to_s
-      headers = response[:response_headers]
 
-      if klass = case status
-                 when 400 then Ivapi::BadRequest
-                 when 401 then Ivapi::Unauthorized
-                 when 403 then Ivapi::Forbidden
-                 end
-        klass.new(response)
-      end
+      klass = case status
+              when 400 then Ivapi::BadRequest
+              when 401 then Ivapi::Unauthorized
+              when 403 then Ivapi::Forbidden
+              end
+
+      klass.new(response) if klass
     end
   end
 
