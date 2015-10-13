@@ -13,10 +13,6 @@ module Ivapi
       @client
     end
 
-    def respond_to_missing?(method_name, include_private = false)
-      client.respond_to?(method_name, include_private)
-    end if RUBY_VERSION >= '1.9'
-
     private
 
     def method_missing(method_name, *args, &block)

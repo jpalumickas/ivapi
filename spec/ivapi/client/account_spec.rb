@@ -24,6 +24,18 @@ describe Ivapi::Client::Account do
     end
   end
 
+  describe 'account credits' do
+    before(:each) do
+      stub_command('account_credits', count: 10)
+        .to_return(json_response('account_credits.json'))
+      @account_orders = Ivapi.account.credits
+    end
+
+    it 'should return correct credits count' do
+      expect(@account_orders.count).to eq(0)
+    end
+  end
+
   describe 'account orders' do
     before(:each) do
       stub_command('account_orders')
@@ -58,8 +70,6 @@ describe Ivapi::Client::Account do
         .to eq('Adreso metinis mokestis (example.com)')
     end
   end
-
-  it 'returns account credits'
 
   describe 'account bonuses' do
     before(:each) do
