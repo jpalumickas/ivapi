@@ -12,15 +12,8 @@ module Ivapi
     # Default User Agent header string
     USER_AGENT   = "Ivapi ruby gem v#{Ivapi::VERSION}".freeze
 
-    # In Faraday 0.9, Faraday::Builder was renamed to Faraday::RackBuilder
-    RACK_BUILDER_CLASS = if defined?(Faraday::RackBuilder)
-                           Faraday::RackBuilder
-                         else
-                           Faraday::Builder
-                         end
-
     # Default Faraday middleware stack
-    MIDDLEWARE = RACK_BUILDER_CLASS.new do |builder|
+    MIDDLEWARE = Faraday::RackBuilder.new do |builder|
       builder.request :json
 
       builder.use FaradayMiddleware::FollowRedirects
