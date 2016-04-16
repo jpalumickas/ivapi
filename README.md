@@ -76,7 +76,7 @@ implementations:
 
 ## Copyright
 Copyright (c) 2012-2016 Justas Palumickas.
-See [LICENSE][] for details.
+See [LICENSE][license] for details.
 
 [rubygems]: https://rubygems.org/gems/ivapi
 [travis]: http://travis-ci.org/jpalumickas/ivapi
@@ -86,4 +86,4 @@ See [LICENSE][] for details.
 
 [iv.lt]: http://www.iv.lt
 [dedikuoti.lt]: http://www.dedikuoti.lt
-[license]: LICENSE
+[license]: https://raw.githubusercontent.com/jpalumickas/ivapi/master/LICENSE
