@@ -11,7 +11,7 @@ module Ivapi
 
       def on_complete(response)
         error = Ivapi::Error.from_response(response)
-        fail error if error
+        raise error if error
       end
     end
   end

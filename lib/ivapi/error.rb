@@ -7,7 +7,7 @@ module Ivapi
     #
     # Returns the Ivapi::Error.
     def self.from_response(response)
-      status  = response[:status].to_i
+      status = response[:status].to_i
 
       klass = case status
               when 400 then Ivapi::BadRequest
