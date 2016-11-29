@@ -8,7 +8,7 @@ module Ivapi
         params = { command: 'account_info' }
         get('/json.php', params)
       end
-      alias_method :info, :information
+      alias info information
 
       # Get account orders.
       #
