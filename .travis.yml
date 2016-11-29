@@ -3,23 +3,24 @@ sudo: false
 before_install:
   - gem install bundler
 
+after_success:
+  - bundle exec codeclimate-test-reporter
+
 bundler_args: --without development
 
 language: ruby
 
 rvm:
-  - 1.9.3
   - 2.0.0
   - 2.1.0
   - 2.2.0
   - 2.3.0
   - ruby-head
-  - jruby-19mode
   - jruby-head
-  - rbx
+  - rbx-2
 
 matrix:
   allow_failures:
     - rvm: ruby-head
     - rvm: jruby-head
-    - rvm: rbx
+    - rvm: rbx-2

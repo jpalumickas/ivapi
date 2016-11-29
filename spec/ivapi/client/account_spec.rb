@@ -22,6 +22,10 @@ describe Ivapi::Client::Account do
     it 'should return account name' do
       expect(@info.name).to eq('Name Surname')
     end
+
+    it 'has alias info' do
+      expect(Ivapi.account.info).to eq(Ivapi.account.information)
+    end
   end
 
   describe 'account credits' do

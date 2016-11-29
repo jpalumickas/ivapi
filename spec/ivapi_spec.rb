@@ -1,10 +1,9 @@
 require 'spec_helper'
+
 describe Ivapi do
-  # describe '.respond_to?' do
-  #   it 'is true if method exists' do
-  #     expect(Ivapi.respond_to?(:new, true)).to eq(true)
-  #   end
-  # end
+  it 'responds to config' do
+    expect(Ivapi.respond_to?(:configure)).to be_truthy
+  end
 
   # describe '.new' do
   #   it 'is a Ivapi::Client' do

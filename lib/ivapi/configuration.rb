@@ -30,7 +30,7 @@ module Ivapi
       end
       self
     end
-    alias_method :setup, :reset!
+    alias setup reset!
 
     private
 

@@ -15,7 +15,7 @@ module Ivapi
         params = { command: 'server_info', id: server_id }
         get('/json.php', params)
       end
-      alias_method :info, :information
+      alias info information
 
       # Get server tasks.
       #
@@ -146,7 +146,7 @@ module Ivapi
         params = { command: 'server_domain', id: server_id, domain: domain }
         get('/json.php', params)
       end
-      alias_method :hostname, :domain
+      alias hostname domain
     end
   end
 end
