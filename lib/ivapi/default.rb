@@ -42,6 +42,10 @@ module Ivapi
         nil
       end
 
+      def hosting_id
+        nil
+      end
+
       # Default middleware stack for Faraday::Connection
       # from {MIDDLEWARE}
       # @return [String]
