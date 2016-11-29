@@ -137,6 +137,18 @@ describe Ivapi::Client::Server do
     end
   end
 
+  describe '#ptr' do
+    let(:ptr) { Ivapi.server.ptr(ip: '1.2.3.4', domain: 'example.com') }
+    before do
+      stub_command('server_ptr', id: 3, ip: '1.2.3.4', domain: 'example.com')
+        .to_return(json_response('server_ptr.json'))
+    end
+
+    it 'has correct domain' do
+      expect(ptr.domain).to eq('example.com')
+    end
+  end
+
   describe 'change server plan' do
     before(:each) do
       stub_command('server_change', id: 3)

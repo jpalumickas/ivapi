@@ -123,6 +123,18 @@ module Ivapi
         get('/json.php', params)
       end
 
+      # Reverse PTR record change for additional IP.
+      #
+      # options - The Hash options (default: {}):
+      #           :ip     - The String of additional IP.
+      #           :domain - The String of reverse PTR.
+      #
+      # Returns the Hash of new ptr info.
+      def ptr(options = {})
+        params = options.merge(command: 'server_ptr', id: server_id)
+        get('/json.php', params)
+      end
+
       # Send command to change server plan.
       #
       # options - The Hash options (default: {}):

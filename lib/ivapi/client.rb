@@ -3,6 +3,7 @@ require 'ivapi/authentication'
 
 require 'ivapi/client/base'
 require 'ivapi/client/account'
+require 'ivapi/client/hosting'
 require 'ivapi/client/server'
 
 module Ivapi
@@ -23,6 +24,10 @@ module Ivapi
 
     def account
       Ivapi::Client::Account.new(self)
+    end
+
+    def hosting(hosting_id = @hosting_id)
+      Ivapi::Client::Hosting.new(self, hosting_id)
     end
 
     def server(server_id = @server_id)
