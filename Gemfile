@@ -13,4 +13,9 @@ group :test do
   gem 'webmock', '~> 2.1.0'
 end
 
+platforms :rbx do
+  gem 'psych'
+  gem 'rubysl', '~> 2.0'
+end
+
 gemspec
