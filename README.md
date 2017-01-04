@@ -74,7 +74,7 @@ implementations:
 * Ruby 2.3.0
 
 ## Copyright
-Copyright (c) 2012-2016 Justas Palumickas.
+Copyright (c) 2012-2017 Justas Palumickas.
 See [LICENSE][license] for details.
 
 [rubygems]: https://rubygems.org/gems/ivapi
