@@ -149,6 +149,18 @@ describe Ivapi::Client::Server do
     end
   end
 
+  describe '#move_ip' do
+    let(:move_ip) { Ivapi.server.move_ip('1.2.3.4', 123) }
+    before do
+      stub_command('server_move_ip', id: 3, ip: '1.2.3.4', target_id: 123)
+        .to_return(json_response('server_move_ip.json'))
+    end
+
+    it 'has correct ip address' do
+      expect(move_ip.ip).to eq('1.2.3.4')
+    end
+  end
+
   describe 'change server plan' do
     before(:each) do
       stub_command('server_change', id: 3)

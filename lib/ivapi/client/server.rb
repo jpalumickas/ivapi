@@ -135,6 +135,23 @@ module Ivapi
         get('/json.php', params)
       end
 
+      # Moves additional IP to another server.
+      #
+      # ip        - The String of additional IP.
+      # target_id - The String of another server id.
+      #
+      # Returns the Hash with information.
+      def move_ip(ip, target_id)
+        params = {
+          command: 'server_move_ip',
+          id: server_id,
+          ip: ip,
+          target_id: target_id
+        }
+
+        get('/json.php', params)
+      end
+
       # Send command to change server plan.
       #
       # options - The Hash options (default: {}):
