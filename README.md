@@ -72,6 +72,7 @@ implementations:
 * Ruby 2.1.0
 * Ruby 2.2.0
 * Ruby 2.3.0
+* Ruby 2.4.0
 
 ## Copyright
 Copyright (c) 2012-2017 Justas Palumickas.
