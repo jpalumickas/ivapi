@@ -19,11 +19,11 @@ Gem::Specification.new do |gem|
   gem.test_files = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ['lib']
 
-  gem.add_dependency 'addressable', '~> 2.3'
-  gem.add_dependency 'faraday', '~> 0.9.2'
-  gem.add_dependency 'faraday_middleware', '~> 0.10.0'
+  gem.add_dependency 'addressable', '~> 2.5'
+  gem.add_dependency 'faraday', '~> 0.10'
+  gem.add_dependency 'faraday_middleware', '~> 0.10'
   gem.add_dependency 'hashie', '~> 3.4'
-  gem.add_dependency 'multi_json', '~> 1.11'
+  gem.add_dependency 'multi_json', '~> 1.12'
 
   gem.add_development_dependency 'bundler', '~> 1.6'
   gem.add_development_dependency 'rake', '~> 10.0'
