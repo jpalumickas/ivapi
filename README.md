@@ -51,7 +51,7 @@ Ivapi.account.information
 ```
 
 Orders
-```
+```rb
 Ivapi.account.orders
 ```
 
@@ -66,7 +66,7 @@ Ivapi.server.information
 ## Supported Ruby Versions
 
 This library aims to support and is [tested against][travis] the following Ruby
-implementations:
+versions:
 
 * Ruby 2.0.0
 * Ruby 2.1.0
