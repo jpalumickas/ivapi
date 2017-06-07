@@ -1,4 +1,5 @@
 require 'faraday_middleware'
+require 'ivapi/mash'
 require 'ivapi/response/raise_error'
 require 'ivapi/response/rename_keys'
 require 'ivapi/version'
@@ -17,7 +18,7 @@ module Ivapi
       builder.request :json
 
       builder.use FaradayMiddleware::FollowRedirects
-      builder.use FaradayMiddleware::Mashify
+      builder.use FaradayMiddleware::Mashify, mash_class: Ivapi::Mash
       builder.use Ivapi::Response::RenameKeys
       builder.use FaradayMiddleware::ParseJson
       builder.use Ivapi::Response::RaiseError
