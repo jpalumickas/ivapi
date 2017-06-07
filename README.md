@@ -1,6 +1,6 @@
 # Ivapi
 
-Gem which helps to communicate with Interneto vizija [http://iv.lt][iv.lt] ([http://dedikuoti.lt][dedikuoti.lt]) API.
+Gem which helps to communicate with Interneto vizija [https://www.iv.lt][iv.lt] ([https://wwww.dedikuoti.lt][dedikuoti.lt]) API.
 
 [![Gem Version](http://img.shields.io/gem/v/ivapi.svg?style=flat-square)][rubygems]
 [![Build Status](http://img.shields.io/travis/jpalumickas/ivapi.svg?style=flat-square)][travis]
@@ -12,15 +12,20 @@ Gem which helps to communicate with Interneto vizija [http://iv.lt][iv.lt] ([htt
 
 Add this line to your application's Gemfile:
 
-    gem 'ivapi'
+```rb
+gem 'ivapi'
+```
 
 And then execute:
-
-    $ bundle
+```sh
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install ivapi
+```sh
+$ gem install ivapi
+```
 
 ## Usage
 
@@ -84,6 +89,6 @@ See [LICENSE][license] for details.
 [coveralls]: https://coveralls.io/r/jpalumickas/ivapi
 [codeclimate]: https://codeclimate.com/github/jpalumickas/ivapi
 
-[iv.lt]: http://www.iv.lt
-[dedikuoti.lt]: http://www.dedikuoti.lt
+[iv.lt]: https://www.iv.lt
+[dedikuoti.lt]: https://www.dedikuoti.lt
 [license]: https://raw.githubusercontent.com/jpalumickas/ivapi/master/LICENSE
