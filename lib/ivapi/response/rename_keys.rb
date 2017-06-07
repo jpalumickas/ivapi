@@ -4,7 +4,7 @@ module Ivapi
   # Faraday response middleware
   module Response
     class RenameKeys < Faraday::Response::Middleware
-      UNUSED_KEYS = %w(ac_ us_ bo_ or_ se_ ta_ in_).freeze
+      UNUSED_KEYS = %w[ac_ us_ bo_ or_ se_ ta_ in_].freeze
 
       private
 

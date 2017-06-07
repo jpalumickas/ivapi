@@ -5,6 +5,7 @@ group :test do
   gem 'coveralls', '~> 0.8', require: false
   gem 'rake' # We need a rake gem for Travis CI.
   gem 'rspec', '~> 3.6'
+  gem 'rubocop', '~> 0.49'
   gem 'simplecov', '~> 0.14', require: false
   gem 'webmock', '~> 3.0'
 end

@@ -4,18 +4,18 @@ require 'ivapi/version'
 module Ivapi
   module Configuration
     attr_accessor :username, :password, :user_agent, :connection_options,
-                  :web_endpoint, :api_endpoint, :server_id, :hosting_id
+      :web_endpoint, :api_endpoint, :server_id, :hosting_id
 
     def self.keys
-      @keys ||= [
-        :api_endpoint,
-        :username,
-        :middleware,
-        :password,
-        :user_agent,
-        :connection_options,
-        :server_id,
-        :hosting_id
+      @keys ||= %i[
+        api_endpoint
+        username
+        middleware
+        password
+        user_agent
+        connection_options
+        server_id
+        hosting_id
       ]
     end
 

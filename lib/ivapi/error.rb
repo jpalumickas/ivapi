@@ -10,10 +10,10 @@ module Ivapi
       status = response[:status].to_i
 
       klass = case status
-              when 400 then Ivapi::BadRequest
-              when 401 then Ivapi::Unauthorized
-              when 403 then Ivapi::Forbidden
-              end
+      when 400 then Ivapi::BadRequest
+      when 401 then Ivapi::Unauthorized
+      when 403 then Ivapi::Forbidden
+      end
 
       klass.new(response) if klass
     end

@@ -11,7 +11,7 @@ module Ivapi
     include Ivapi::Authentication
     include Ivapi::Configuration
 
-    attr_reader *Ivapi::Configuration.keys
+    attr_reader(*Ivapi::Configuration.keys)
 
     def initialize(options = {})
       # Use options passed in, but fall back to module defaults
