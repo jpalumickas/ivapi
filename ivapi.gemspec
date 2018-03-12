@@ -1,6 +1,4 @@
-# coding: utf-8
-
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'ivapi/version'
 
@@ -9,11 +7,12 @@ Gem::Specification.new do |gem|
   gem.author = 'Justas Palumickas'
   gem.email = 'jpalumickas@gmail.com'
   gem.description = 'Gem which helps to communicate with https://www.iv.lt API.'
-  gem.summary = 'Ruby wrapper for working with Interneto Vizija API.'
+  gem.summary = 'Ruby wrapper for Interneto Vizija API.'
   gem.homepage = 'https://github.com/jpalumickas/ivapi/'
   gem.license = 'MIT'
-  gem.required_ruby_version = '>= 2.0.0'
-  gem.requirements << 'Interneto Vizija allow to use API only on them servers.'
+  gem.required_ruby_version = '>= 2.1.0'
+  gem.requirements << 'Interneto Vizija only allows to use API on their' \
+                      'servers.'
 
   gem.files = `git ls-files -z`.split("\x0")
   gem.executables = gem.files.grep(%r{^bin/}) { |f| File.basename(f) }
@@ -21,7 +20,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_dependency 'faraday', '~> 0.10'
-  gem.add_dependency 'faraday_middleware', '~> 0.11'
+  gem.add_dependency 'faraday_middleware', '~> 0.10'
   gem.add_dependency 'hashie', '~> 3.5.5'
 
   gem.add_development_dependency 'bundler', '~> 1.6'

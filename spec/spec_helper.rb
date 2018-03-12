@@ -1,9 +1,7 @@
 require 'simplecov'
-require 'coveralls'
 
 SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
+  SimpleCov::Formatter::HTMLFormatter
 ]
 
 SimpleCov.start
@@ -12,7 +10,7 @@ require 'ivapi'
 require 'rspec'
 require 'webmock/rspec'
 
-WebMock.disable_net_connect!(allow: ['coveralls.io', 'codeclimate.com'])
+WebMock.disable_net_connect!(allow: ['codeclimate.com'])
 
 RSpec.configure do |config|
   config.expect_with :rspec do |c|
@@ -33,7 +31,7 @@ def stub_command(command, options = {})
 end
 
 def fixture_path
-  File.expand_path('../fixtures', __FILE__)
+  File.expand_path('fixtures', __dir__)
 end
 
 def fixture(file)

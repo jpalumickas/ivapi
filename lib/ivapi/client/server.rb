@@ -35,16 +35,16 @@ module Ivapi
 
       # Get server graphs.
       #
-      # width - The Integer number of graphs width (max: 1000, optimal: 768).
-      # ip    - The String of ip, from which graphs can be viewed.
+      # width     - The Integer of graphs width (max: 1000, optimal: 768).
+      # server_ip - The String of ip, from which graphs can be viewed.
       #
       # Returns the Hash of server graphs.
-      def graphs(width, ip)
+      def graphs(width, server_ip)
         params = {
           command: 'server_graphs',
           id: server_id,
           width: width,
-          ip: ip
+          ip: server_ip
         }
 
         get('/json.php', params)
@@ -68,15 +68,15 @@ module Ivapi
 
       # Send command to recreate the server.
       #
-      # os      - The String of os (operating system) id.
-      # options - The Hash options (default: {}):
-      #           :new_password - The String of new server
-      #                           password (min: 8, max: 64).
+      # server_os - The String of os (operating system) id.
+      # options   - The Hash options (default: {}):
+      #             :new_password - The String of new server
+      #                             password (min: 8, max: 64).
       #
       # Returns the Integer of task id.
-      def recreate(os, options = {})
+      def recreate(server_os, options = {})
         params = options.merge(
-          command: 'server_recreate', id: server_id, os: os
+          command: 'server_recreate', id: server_id, os: server_os
         )
 
         get('/json.php', params)
@@ -137,15 +137,15 @@ module Ivapi
 
       # Moves additional IP to another server.
       #
-      # ip        - The String of additional IP.
+      # server_ip - The String of additional IP.
       # target_id - The String of another server id.
       #
       # Returns the Hash with information.
-      def move_ip(ip, target_id)
+      def move_ip(server_ip, target_id)
         params = {
           command: 'server_move_ip',
           id: server_id,
-          ip: ip,
+          ip: server_ip,
           target_id: target_id
         }
 

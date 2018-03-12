@@ -1,35 +1,35 @@
 AllCops:
-  TargetRubyVersion: 2.0
+  TargetRubyVersion: 2.1
   Include:
     - '**/Rakefile'
     - '**/Gemfile'
 
-Style/Documentation:
-  Enabled: false
-
-Style/AlignParameters:
+Layout/AlignParameters:
   Enabled: true
   EnforcedStyle: with_fixed_indentation
 
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   Enabled: true
   EnforcedStyle: indented
 
-Style/MultilineMethodCallIndentation:
+Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
 
-Style/CaseIndentation:
+Layout/CaseIndentation:
   Enabled: true
   EnforcedStyle: end
 
-Lint/EndAlignment:
+Layout/EndAlignment:
   Enabled: true
   EnforcedStyleAlignWith: variable
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/Documentation:
+  Enabled: false
+
 Metrics/BlockLength:
-  ExcludedMethods:
-    - 'describe'
+  Exclude:
+    - 'spec/**/*_spec.rb'

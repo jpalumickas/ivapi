@@ -2,11 +2,11 @@
 
 Gem which helps to communicate with Interneto vizija [https://www.iv.lt][iv.lt] ([https://wwww.dedikuoti.lt][dedikuoti.lt]) API.
 
-[![Gem Version](http://img.shields.io/gem/v/ivapi.svg?style=flat-square)][rubygems]
-[![Build Status](http://img.shields.io/travis/jpalumickas/ivapi.svg?style=flat-square)][travis]
-[![Dependency Status](http://img.shields.io/gemnasium/jpalumickas/ivapi.svg?style=flat-square)][gemnasium]
-[![Coverage Status](http://img.shields.io/coveralls/jpalumickas/ivapi/master.svg?style=flat-square)][coveralls]
-[![Code Climate](http://img.shields.io/codeclimate/github/jpalumickas/ivapi.svg?style=flat-square)][codeclimate]
+[![Gem Version](https://img.shields.io/gem/v/ivapi.svg?style=flat-square)][rubygems]
+[![Build Status](https://img.shields.io/travis/jpalumickas/ivapi.svg?style=flat-square)][travis]
+[![Dependency Status](https://img.shields.io/gemnasium/jpalumickas/ivapi.svg?style=flat-square)][gemnasium]
+[![Code Climate](https://img.shields.io/codeclimate/maintainability/jpalumickas/ivapi.svg?style=flat-square)][codeclimate]
+[![Test Coverage](https://img.shields.io/codeclimate/c/jpalumickas/ivapi.svg?style=flat-square)][codeclimate_coverage]
 
 ## Installation
 
@@ -80,14 +80,14 @@ versions:
 * Ruby 2.4.0
 
 ## Copyright
-Copyright (c) 2012-2017 Justas Palumickas.
+Copyright (c) 2012-2018 Justas Palumickas.
 See [LICENSE][license] for details.
 
 [rubygems]: https://rubygems.org/gems/ivapi
-[travis]: http://travis-ci.org/jpalumickas/ivapi
+[travis]: https://travis-ci.org/jpalumickas/ivapi
 [gemnasium]: https://gemnasium.com/jpalumickas/ivapi
-[coveralls]: https://coveralls.io/r/jpalumickas/ivapi
 [codeclimate]: https://codeclimate.com/github/jpalumickas/ivapi
+[codeclimate_coverage]: https://codeclimate.com/github/jpalumickas/ivapi/test_coverage
 
 [iv.lt]: https://www.iv.lt
 [dedikuoti.lt]: https://www.dedikuoti.lt
