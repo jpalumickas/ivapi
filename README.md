@@ -4,7 +4,6 @@ Gem which helps to communicate with Interneto vizija [https://www.iv.lt][iv.lt] 
 
 [![Gem Version](https://img.shields.io/gem/v/ivapi.svg?style=flat-square)][rubygems]
 [![Build Status](https://img.shields.io/travis/jpalumickas/ivapi.svg?style=flat-square)][travis]
-[![Dependency Status](https://img.shields.io/gemnasium/jpalumickas/ivapi.svg?style=flat-square)][gemnasium]
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/jpalumickas/ivapi.svg?style=flat-square)][codeclimate]
 [![Test Coverage](https://img.shields.io/codeclimate/c/jpalumickas/ivapi.svg?style=flat-square)][codeclimate_coverage]
 
@@ -80,12 +79,11 @@ versions:
 * Ruby 2.5.0
 
 ## Copyright
-Copyright (c) 2012-2018 Justas Palumickas.
+Copyright (c) 2012-2019 Justas Palumickas.
 See [LICENSE][license] for details.
 
 [rubygems]: https://rubygems.org/gems/ivapi
 [travis]: https://travis-ci.org/jpalumickas/ivapi
-[gemnasium]: https://gemnasium.com/jpalumickas/ivapi
 [codeclimate]: https://codeclimate.com/github/jpalumickas/ivapi
 [codeclimate_coverage]: https://codeclimate.com/github/jpalumickas/ivapi/test_coverage
 

@@ -4,29 +4,41 @@ lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'ivapi/version'
 
-Gem::Specification.new do |gem|
-  gem.name = 'ivapi'
-  gem.author = 'Justas Palumickas'
-  gem.email = 'jpalumickas@gmail.com'
-  gem.description = 'Gem which helps to communicate with https://www.iv.lt API.'
-  gem.summary = 'Ruby wrapper for Interneto Vizija API.'
-  gem.homepage = 'https://github.com/jpalumickas/ivapi/'
-  gem.license = 'MIT'
-  gem.requirements << 'Interneto Vizija only allows to use API on their' \
+Gem::Specification.new do |spec|
+  spec.name = 'ivapi'
+  spec.version = Ivapi::VERSION
+  spec.author = 'Justas Palumickas'
+  spec.email = 'jpalumickas@gmail.com'
+
+  spec.summary = 'Ruby wrapper for Interneto Vizija API.'
+  spec.description = 'Gem which helps to communicate with https://www.iv.lt ' \
+                     'API.'
+  spec.homepage = 'https://github.com/jpalumickas/ivapi'
+
+  spec.requirements << 'Interneto Vizija only allows to use API on their ' \
                       'servers.'
 
-  gem.files = `git ls-files -z`.split("\x0")
-  gem.executables = gem.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  gem.test_files = gem.files.grep(%r{^(test|spec|features)/})
-  gem.require_paths = ['lib']
-  gem.required_ruby_version = '>= 2.3.0'
+  spec.metadata = {
+    'bug_tracker_uri' => 'https://github.com/jpalumickas/ivapi/issues',
+    'changelog_uri' => 'https://github.com/jpalumickas/ivapi/releases',
+    'source_code_uri' => 'https://github.com/jpalumickas/ivapi'
+  }
 
-  gem.add_dependency 'faraday', '~> 0.10'
-  gem.add_dependency 'faraday_middleware', '~> 0.10'
-  gem.add_dependency 'hashie', '>= 3.5.5'
+  spec.license = 'MIT'
 
-  gem.add_development_dependency 'bundler', '~> 2.0'
-  gem.add_development_dependency 'rake', '~> 12.0'
+  spec.files         = `git ls-files -z`
+    .split("\x0")
+    .reject { |f| f.match(%r{^(test|spec|features)/}) }
 
-  gem.version = Ivapi::VERSION
+  spec.bindir        = 'exe'
+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.require_paths = ['lib']
+  spec.required_ruby_version = '>= 2.3.0'
+
+  spec.add_dependency 'faraday', '~> 0.10'
+  spec.add_dependency 'faraday_middleware', '~> 0.10'
+  spec.add_dependency 'hashie', '>= 3.5.5'
+
+  spec.add_development_dependency 'bundler', '~> 2.0'
+  spec.add_development_dependency 'rake', '~> 12.0'
 end
