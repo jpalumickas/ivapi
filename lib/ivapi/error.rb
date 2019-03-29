@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Ivapi
   class Error < StandardError
     # Returns the appropriate Ivapi::Error sublcass based
@@ -15,7 +17,7 @@ module Ivapi
       when 403 then Ivapi::Forbidden
       end
 
-      klass.new(response) if klass
+      klass&.new(response)
     end
   end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'ivapi/client'
 require 'ivapi/default'
 
@@ -17,6 +19,7 @@ module Ivapi
 
     def method_missing(method_name, *args, &block)
       return super unless client.respond_to?(method_name)
+
       client.send(method_name, *args, &block)
     end
 

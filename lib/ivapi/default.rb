@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'faraday_middleware'
 require 'ivapi/mash'
 require 'ivapi/response/raise_error'
@@ -8,10 +10,10 @@ module Ivapi
   # Default configuration options for {Client}
   module Default
     # Default API endpoint
-    API_ENDPOINT = 'https://api.iv.lt'.freeze
+    API_ENDPOINT = 'https://api.iv.lt'
 
     # Default User Agent header string
-    USER_AGENT   = "Ivapi ruby gem v#{Ivapi::VERSION}".freeze
+    USER_AGENT   = "Ivapi ruby gem v#{Ivapi::VERSION}"
 
     # Default Faraday middleware stack
     MIDDLEWARE = Faraday::RackBuilder.new do |builder|

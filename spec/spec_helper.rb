@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'simplecov'
 
 SimpleCov.formatters = [
@@ -58,7 +60,7 @@ end
 def iv_command_url(command)
   data = { command: command }
 
-  if @client && @client.authenticated?
+  if @client&.authenticated?
     data.merge(nick: @client.username, password: @client.password)
   end
 
