@@ -10,7 +10,6 @@ Gem::Specification.new do |gem|
   gem.summary = 'Ruby wrapper for Interneto Vizija API.'
   gem.homepage = 'https://github.com/jpalumickas/ivapi/'
   gem.license = 'MIT'
-  gem.required_ruby_version = '>= 2.1.0'
   gem.requirements << 'Interneto Vizija only allows to use API on their' \
                       'servers.'
 
@@ -18,6 +17,7 @@ Gem::Specification.new do |gem|
   gem.executables = gem.files.grep(%r{^bin/}) { |f| File.basename(f) }
   gem.test_files = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ['lib']
+  gem.required_ruby_version = '>= 2.3.0'
 
   gem.add_dependency 'faraday', '~> 0.10'
   gem.add_dependency 'faraday_middleware', '~> 0.10'

@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 2.1
+  TargetRubyVersion: 2.3
   Include:
     - '**/Rakefile'
     - '**/Gemfile'
@@ -23,9 +23,6 @@ Layout/CaseIndentation:
 Layout/EndAlignment:
   Enabled: true
   EnforcedStyleAlignWith: variable
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
 
 Style/Documentation:
   Enabled: false
