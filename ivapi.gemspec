@@ -21,10 +21,10 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'faraday', '~> 0.10'
   gem.add_dependency 'faraday_middleware', '~> 0.10'
-  gem.add_dependency 'hashie', '~> 3.5.5'
+  gem.add_dependency 'hashie', '>= 3.5.5'
 
-  gem.add_development_dependency 'bundler', '~> 1.6'
-  gem.add_development_dependency 'rake', '~> 10.0'
+  gem.add_development_dependency 'bundler', '~> 2.0'
+  gem.add_development_dependency 'rake', '~> 12.0'
 
   gem.version = Ivapi::VERSION
 end
