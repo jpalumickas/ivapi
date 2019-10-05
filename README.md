@@ -67,7 +67,7 @@ Ivapi.server.information
 
 ## Supported Ruby Versions
 
-This library aims to support and is [tested against][travis] the following Ruby
+This library aims to support and is [tested against][github_actions] the following Ruby
 versions:
 
 * Ruby 2.3.0
@@ -81,6 +81,7 @@ See [LICENSE][license] for details.
 
 [rubygems]: https://rubygems.org/gems/ivapi
 [codecov]: https://codecov.io/gh/jpalumickas/ivapi
+[github_actions]: https://github.com/jpalumickas/ivapi/actions
 
 [iv.lt]: https://www.iv.lt
 [dedikuoti.lt]: https://www.dedikuoti.lt
