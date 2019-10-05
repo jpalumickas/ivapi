@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
 require 'simplecov'
+require 'codecov'
 
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter
-]
-
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
+  [
+    SimpleCov::Formatter::Codecov,
+    SimpleCov::Formatter::HTMLFormatter
+  ]
+)
 SimpleCov.start
 
 require 'ivapi'
