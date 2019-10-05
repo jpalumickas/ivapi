@@ -3,9 +3,7 @@
 Gem which helps to communicate with Interneto vizija [https://www.iv.lt][iv.lt] ([https://wwww.dedikuoti.lt][dedikuoti.lt]) API.
 
 [![Gem Version](https://img.shields.io/gem/v/ivapi.svg?style=flat-square)][rubygems]
-[![Build Status](https://img.shields.io/travis/jpalumickas/ivapi.svg?style=flat-square)][travis]
-[![Code Climate](https://img.shields.io/codeclimate/maintainability/jpalumickas/ivapi.svg?style=flat-square)][codeclimate]
-[![Test Coverage](https://img.shields.io/codeclimate/c/jpalumickas/ivapi.svg?style=flat-square)][codeclimate_coverage]
+[![Coverage Status](https://img.shields.io/codecov/c/github/jpalumickas/ivapi?style=flat-square)][codecov]
 
 ## Installation
 
@@ -72,20 +70,17 @@ Ivapi.server.information
 This library aims to support and is [tested against][travis] the following Ruby
 versions:
 
-* Ruby 2.1.0
-* Ruby 2.2.0
 * Ruby 2.3.0
 * Ruby 2.4.0
 * Ruby 2.5.0
+* Ruby 2.6.0
 
 ## Copyright
 Copyright (c) 2012-2019 Justas Palumickas.
 See [LICENSE][license] for details.
 
 [rubygems]: https://rubygems.org/gems/ivapi
-[travis]: https://travis-ci.org/jpalumickas/ivapi
-[codeclimate]: https://codeclimate.com/github/jpalumickas/ivapi
-[codeclimate_coverage]: https://codeclimate.com/github/jpalumickas/ivapi/test_coverage
+[codecov]: https://codecov.io/gh/jpalumickas/ivapi
 
 [iv.lt]: https://www.iv.lt
 [dedikuoti.lt]: https://www.dedikuoti.lt
