@@ -1,7 +1,11 @@
 AllCops:
   TargetRubyVersion: 2.3
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
+  Enabled: true
+  EnforcedStyle: with_fixed_indentation
+
+Layout/ArgumentAlignment:
   Enabled: true
   EnforcedStyle: with_fixed_indentation
 
