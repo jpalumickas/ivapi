@@ -77,7 +77,7 @@ versions:
 * Ruby 2.7.0
 
 ## Copyright
-Copyright (c) 2012-2019 Justas Palumickas.
+Copyright (c) 2012-2020 Justas Palumickas.
 See [LICENSE][license] for details.
 
 [rubygems]: https://rubygems.org/gems/ivapi
