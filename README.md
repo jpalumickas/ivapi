@@ -70,7 +70,6 @@ Ivapi.server.information
 This library aims to support and is [tested against][github_actions] the following Ruby
 versions:
 
-* Ruby 2.3.0
 * Ruby 2.4.0
 * Ruby 2.5.0
 * Ruby 2.6.0
