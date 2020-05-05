@@ -74,9 +74,9 @@ versions:
 * Ruby 2.6.0
 * Ruby 2.7.0
 
-## Copyright
-Copyright (c) 2012-2020 Justas Palumickas.
-See [LICENSE][license] for details.
+## License
+
+The package is available as open source under the terms of the [MIT License][license].
 
 [rubygems]: https://rubygems.org/gems/ivapi
 [codecov]: https://codecov.io/gh/jpalumickas/ivapi
