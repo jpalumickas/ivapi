@@ -8,11 +8,11 @@ module Ivapi
     class RenameKeys < Faraday::Response::Middleware
       UNUSED_KEYS = %w[ac_ us_ bo_ or_ se_ ta_ in_].freeze
 
-      private
-
       def on_complete(response)
         response[:body] = rename_keys(response[:body])
       end
+
+      private
 
       def rename_keys(input)
         if input.is_a?(Hash)
