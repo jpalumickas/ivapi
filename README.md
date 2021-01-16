@@ -73,6 +73,7 @@ versions:
 * Ruby 2.5.0
 * Ruby 2.6.0
 * Ruby 2.7.0
+* Ruby 3.0.0
 
 ## License
 
