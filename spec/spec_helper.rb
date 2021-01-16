@@ -40,7 +40,7 @@ def fixture_path
 end
 
 def fixture(file)
-  File.new(fixture_path + '/' + file)
+  File.new(File.join(fixture_path, file))
 end
 
 def json_response(file)
@@ -63,9 +63,7 @@ end
 def iv_command_url(command)
   data = { command: command }
 
-  if @client&.authenticated?
-    data.merge(nick: @client.username, password: @client.password)
-  end
+  data.merge(nick: @client.username, password: @client.password) if @client&.authenticated?
 
-  iv_url('/json.php?' + URI.encode_www_form(data))
+  iv_url("/json.php?#{URI.encode_www_form(data)}")
 end

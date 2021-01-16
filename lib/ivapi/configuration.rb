@@ -21,6 +21,10 @@ module Ivapi
       ]
     end
 
+    def self.each_key(&block)
+      keys.each(&block)
+    end
+
     def configure
       yield self
       true
@@ -28,7 +32,7 @@ module Ivapi
 
     # Reset configuration options to default values
     def reset!
-      Ivapi::Configuration.keys.each do |key|
+      Ivapi::Configuration.each_key do |key|
         instance_variable_set(:"@#{key}", Ivapi::Default.options[key])
       end
       self

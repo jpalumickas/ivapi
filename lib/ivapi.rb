@@ -8,9 +8,7 @@ module Ivapi
 
   class << self
     def client
-      unless defined?(@client) && @client.same_options?(options)
-        @client = Ivapi::Client.new(options)
-      end
+      @client = Ivapi::Client.new(options) unless defined?(@client) && @client.same_options?(options)
 
       @client
     end

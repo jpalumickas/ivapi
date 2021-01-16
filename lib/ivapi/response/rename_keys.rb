@@ -15,9 +15,10 @@ module Ivapi
       private
 
       def rename_keys(input)
-        if input.is_a?(Hash)
+        case input
+        when Hash
           rename_keys_from_hash(input)
-        elsif input.is_a?(Array)
+        when Array
           input.map { |value| rename_keys(value) }
         else
           input
@@ -28,9 +29,10 @@ module Ivapi
         new_hash = {}
 
         input.map do |key, value|
-          if value.is_a?(Hash)
+          case value
+          when Hash
             value = rename_keys(value)
-          elsif value.is_a?(Array)
+          when Array
             value = value.map { |v| rename_keys(v) }
           end
 

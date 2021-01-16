@@ -18,10 +18,9 @@ module Ivapi
       def request(method, path, options = {})
         options.merge!(client.authentication)
 
-        response = connection.send(method) do |request|
+        connection.send(method) do |request|
           request.url(path, options)
         end
-        response
       end
 
       def connection(_options = {})
